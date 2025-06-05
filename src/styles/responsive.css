@@ -1,0 +1,54 @@
+/* WRIT 40363 - Responsive Styles */
+
+@media (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header, .footer {
+        padding: 10px;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation a {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    .card {
+        margin: 10px 0;
+    }
+
+    .button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .navigation {
+        display: none; /* Hide navigation by default */
+    }
+
+    .navigation.active {
+        display: flex; /* Show navigation when active */
+    }
+}

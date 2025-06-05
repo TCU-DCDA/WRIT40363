@@ -1,0 +1,795 @@
+/* Steampunk Theme CSS */
+
+/* ===== COLOR VARIABLES ===== */
+:root {
+    --brass: #B8860B;
+    --dark-brass: #8B6914;
+    --copper: #B87333;
+    --bronze: #CD7F32;
+    --iron: #4A4A4A;
+    --steam-white: #F5F5DC;
+    --parchment: #F4F1E8;
+    --leather: #8B4513;
+    --dark-leather: #654321;
+    --gear-shadow: rgba(0, 0, 0, 0.3);
+    --steam: rgba(255, 255, 255, 0.1);
+    --victorian-gold: #FFD700;
+}
+
+/* ===== STEAMPUNK BACKGROUND ===== */
+.steam-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 20% 50%, var(--steam) 0%, transparent 30%),
+        radial-gradient(circle at 80% 20%, var(--steam) 0%, transparent 20%),
+        radial-gradient(circle at 40% 80%, var(--steam) 0%, transparent 25%),
+        linear-gradient(135deg, #2C1810 0%, #1A0F0A 50%, #2C1810 100%);
+}
+
+/* Animated Gears */
+.gear {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--brass);
+    box-shadow: 
+        inset 0 0 20px var(--dark-brass),
+        0 0 20px var(--gear-shadow);
+    animation: rotate 20s linear infinite;
+}
+
+.gear::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 30%;
+    background: var(--iron);
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.gear-1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    right: 10%;
+    animation-duration: 15s;
+}
+
+.gear-2 {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    left: 5%;
+    animation-duration: 25s;
+    animation-direction: reverse;
+}
+
+.gear-3 {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    right: 5%;
+    animation-duration: 18s;
+}
+
+/* Steam Pipes */
+.steam-pipe {
+    position: absolute;
+    background: linear-gradient(45deg, var(--copper), var(--bronze));
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--gear-shadow);
+}
+
+.pipe-1 {
+    width: 200px;
+    height: 20px;
+    top: 25%;
+    left: -50px;
+    transform: rotate(30deg);
+}
+
+.pipe-2 {
+    width: 150px;
+    height: 15px;
+    bottom: 40%;
+    right: -30px;
+    transform: rotate(-45deg);
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===== STEAMPUNK HERO SECTION ===== */
+.steampunk-hero {
+    position: relative;
+    background: 
+        linear-gradient(135deg, rgba(184, 134, 11, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="gears" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="8" fill="none" stroke="rgba(184,134,11,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23gears)"/></svg>');
+    border: 3px solid var(--brass);
+    border-radius: 20px;
+    margin: 2rem 0;
+    padding: 3rem;
+    box-shadow: 
+        0 0 30px var(--gear-shadow),
+        inset 0 0 50px rgba(184, 134, 11, 0.1);
+}
+
+.hero-ornament {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 20px;
+    background: linear-gradient(90deg, transparent, var(--brass), transparent);
+}
+
+.top-ornament {
+    top: -10px;
+}
+
+.bottom-ornament {
+    bottom: -10px;
+}
+
+.hero-ornament::before,
+.hero-ornament::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: var(--brass);
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px var(--dark-brass);
+}
+
+.hero-ornament::before {
+    left: -15px;
+}
+
+.hero-ornament::after {
+    right: -15px;
+}
+
+/* Academy Crest */
+.academy-crest {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.crest-gear {
+    width: 80px;
+    height: 80px;
+    background: var(--brass);
+    border-radius: 50%;
+    position: relative;
+    margin-right: 1rem;
+    box-shadow: 
+        0 0 20px var(--gear-shadow),
+        inset 0 0 20px var(--dark-brass);
+    animation: rotate 30s linear infinite;
+}
+
+.crest-gear::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: var(--iron);
+    border-radius: 50%;
+}
+
+.crest-text {
+    font-family: 'Germania One', serif;
+    font-size: 2rem;
+    color: var(--brass);
+    text-shadow: 2px 2px 4px var(--gear-shadow);
+    letter-spacing: 2px;
+}
+
+/* Academy Title */
+.academy-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.academy-name {
+    display: block;
+    font-family: 'Germania One', serif;
+    font-size: 2.5rem;
+    color: var(--brass);
+    text-shadow: 2px 2px 4px var(--gear-shadow);
+    margin-bottom: 0.5rem;
+}
+
+.course-title {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: var(--copper);
+    font-weight: 600;
+}
+
+.specialty-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--bronze);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Hero Details */
+.hero-details {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.semester-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.term, .schedule {
+    font-family: 'Cinzel', serif;
+    color: var(--brass);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: rgba(184, 134, 11, 0.1);
+    border: 1px solid var(--brass);
+    border-radius: 10px;
+}
+
+.academy-description {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--parchment);
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===== STEAMPUNK BUTTONS ===== */
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.btn-brass {
+    background: linear-gradient(135deg, var(--brass), var(--dark-brass));
+    color: var(--iron);
+    border-color: var(--brass);
+    box-shadow: 0 5px 15px var(--gear-shadow);
+}
+
+.btn-brass:hover {
+    background: linear-gradient(135deg, var(--dark-brass), var(--brass));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--gear-shadow);
+}
+
+.btn-copper {
+    background: linear-gradient(135deg, var(--copper), var(--bronze));
+    color: var(--steam-white);
+    border-color: var(--copper);
+    box-shadow: 0 5px 15px var(--gear-shadow);
+}
+
+.btn-copper:hover {
+    background: linear-gradient(135deg, var(--bronze), var(--copper));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--gear-shadow);
+}
+
+.btn-appointment {
+    background: linear-gradient(135deg, var(--victorian-gold), #B8860B);
+    color: var(--iron);
+    border-color: var(--victorian-gold);
+    box-shadow: 0 5px 15px var(--gear-shadow);
+    font-size: 0.9rem;
+}
+
+.btn-appointment:hover {
+    background: linear-gradient(135deg, #B8860B, var(--victorian-gold));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--gear-shadow);
+}
+
+.btn-gear {
+    width: 20px;
+    height: 20px;
+    background: var(--iron);
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 10s linear infinite;
+}
+
+.btn-gear::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--steam-white);
+    border-radius: 50%;
+}
+
+/* ===== STEAMPUNK SECTIONS ===== */
+.steampunk-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: 
+        linear-gradient(135deg, rgba(139, 105, 20, 0.1) 0%, rgba(74, 74, 74, 0.1) 100%);
+    border: 2px solid var(--brass);
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 10px 30px var(--gear-shadow);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-family: 'Germania One', serif;
+    font-size: 2rem;
+    color: var(--brass);
+    text-shadow: 2px 2px 4px var(--gear-shadow);
+    margin-bottom: 1rem;
+}
+
+.section-ornament {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--brass), transparent);
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-ornament::before,
+.section-ornament::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    width: 20px;
+    height: 20px;
+    background: var(--brass);
+    border-radius: 50%;
+    box-shadow: inset 0 0 5px var(--dark-brass);
+}
+
+.section-ornament::before {
+    left: -10px;
+}
+
+.section-ornament::after {
+    right: -10px;
+}
+
+/* ===== MECHANICAL CARDS ===== */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.mechanical-card {
+    position: relative;
+    background: 
+        linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(139, 105, 20, 0.1));
+    border: 2px solid var(--copper);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.mechanical-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--gear-shadow);
+    border-color: var(--brass);
+}
+
+.card-gear {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: var(--brass);
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px var(--dark-brass);
+    animation: rotate 20s linear infinite;
+}
+
+.card-gear::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: var(--iron);
+    border-radius: 50%;
+}
+
+.card-brass-corner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--brass);
+    clip-path: polygon(0 100%, 100% 100%, 0 0);
+}
+
+.card-content h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--brass);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.card-content p {
+    font-family: 'Crimson Text', serif;
+    color: var(--parchment);
+    line-height: 1.6;
+}
+
+/* ===== CONSOLE BUTTONS ===== */
+.console-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.console-button {
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.console-button:hover {
+    transform: translateY(-3px);
+}
+
+.button-frame {
+    position: relative;
+    background: 
+        linear-gradient(135deg, rgba(184, 115, 51, 0.2), rgba(205, 127, 50, 0.2));
+    border: 3px solid var(--copper);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.console-button:hover .button-frame {
+    border-color: var(--brass);
+    box-shadow: 0 10px 30px var(--gear-shadow);
+}
+
+.button-gear {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    background: var(--copper);
+    border-radius: 50%;
+    animation: rotate 15s linear infinite;
+}
+
+.button-indicator {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    background: var(--victorian-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--victorian-gold);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.button-content h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--brass);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.button-content p {
+    font-family: 'Crimson Text', serif;
+    color: var(--parchment);
+    line-height: 1.5;
+    margin: 0;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* ===== PROFESSOR PANEL ===== */
+.professor-frame {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.professor-portrait {
+    flex-shrink: 0;
+}
+
+.portrait-frame {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--brass), var(--dark-brass));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px var(--gear-shadow);
+}
+
+.portrait-gear {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background: var(--copper);
+    border-radius: 50%;
+    animation: rotate 25s linear infinite;
+}
+
+.professor-initial {
+    font-family: 'Germania One', serif;
+    font-size: 2rem;
+    color: var(--iron);
+    font-weight: bold;
+}
+
+.professor-details {
+    flex: 1;
+}
+
+.professor-name {
+    font-family: 'Cinzel', serif;
+    color: var(--brass);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.professor-title {
+    font-family: 'Cinzel', serif;
+    color: var(--copper);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.professor-info {
+    margin-bottom: 1.5rem;
+}
+
+.info-line {
+    display: flex;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.info-label {
+    font-family: 'Cinzel', serif;
+    color: var(--brass);
+    font-weight: 600;
+    min-width: 120px;
+}
+
+.info-value {
+    font-family: 'Crimson Text', serif;
+    color: var(--parchment);
+}
+
+.info-value a {
+    color: var(--copper);
+    text-decoration: none;
+}
+
+.info-value a:hover {
+    color: var(--brass);
+    text-decoration: underline;
+}
+
+/* ===== PHILOSOPHY CHAMBER ===== */
+.philosophy-frame {
+    position: relative;
+    padding: 2rem;
+    background: 
+        radial-gradient(circle at center, rgba(184, 134, 11, 0.1) 0%, transparent 70%);
+    border-radius: 20px;
+}
+
+.philosophy-ornament {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--brass);
+}
+
+.philosophy-ornament::before,
+.philosophy-ornament::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    width: 20px;
+    height: 20px;
+    background: var(--brass);
+    border-radius: 50%;
+}
+
+.philosophy-ornament::before {
+    left: -10px;
+}
+
+.philosophy-ornament::after {
+    right: -10px;
+}
+
+.academy-quote {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-left: none;
+}
+
+.quote-marks {
+    font-family: 'Germania One', serif;
+    font-size: 4rem;
+    color: var(--brass);
+    line-height: 1;
+    opacity: 0.7;
+}
+
+.quote-marks.closing {
+    transform: rotate(180deg);
+    display: inline-block;
+}
+
+.academy-quote p {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.2rem;
+    color: var(--parchment);
+    line-height: 1.7;
+    font-style: italic;
+    margin: 1rem 0;
+}
+
+.philosophy-text p {
+    font-family: 'Crimson Text', serif;
+    color: var(--parchment);
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.philosophy-signature {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.signature-flourish {
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--brass), transparent);
+}
+
+.philosophy-signature span {
+    font-family: 'Cinzel', serif;
+    color: var(--brass);
+    font-style: italic;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .academy-name {
+        font-size: 2rem;
+    }
+    
+    .course-title {
+        font-size: 1.4rem;
+    }
+    
+    .semester-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .professor-frame {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .info-line {
+        justify-content: center;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .gear-1, .gear-2, .gear-3 {
+        opacity: 0.3;
+    }
+    
+    .steam-pipe {
+        opacity: 0.2;
+    }
+}
+
+@media (max-width: 480px) {
+    .steampunk-hero {
+        padding: 2rem 1rem;
+    }
+    
+    .steampunk-section {
+        padding: 1rem;
+    }
+    
+    .overview-grid,
+    .console-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .academy-description {
+        font-size: 1rem;
+    }
+}

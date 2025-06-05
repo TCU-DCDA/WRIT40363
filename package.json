@@ -1,0 +1,24 @@
+{
+  "name": "writ-40363-website",
+  "version": "1.0.0",
+  "description": "A class website for WRIT 40363, focusing on multimedia authoring and web development.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process not defined yet.'"
+  },
+  "author": "Curt Rode, PhD",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "writ",
+    "40363",
+    "website",
+    "multimedia",
+    "authoring",
+    "web development"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "musk-watcher",
+  "version": "1.0.0",
+  "description": "Musk Watcher - An application that tracks web references to Elon Musk in reverse chronological order with real-time updates.",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "ts-node src/app.ts",
+    "build": "tsc",
+    "test": "echo \"No tests specified\" && exit 0",
+    "postinstall": "npm run build"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "express": "^4.18.0",
+    "jsdom": "^23.0.0",
+    "cron": "^3.1.0",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.0",
+    "@types/node": "^20.0.0",
+    "@types/express": "^4.17.0",
+    "@types/jsdom": "^21.0.0",
+    "typescript": "^5.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

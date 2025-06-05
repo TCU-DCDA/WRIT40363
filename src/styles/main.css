@@ -1,0 +1,222 @@
+/* WRIT 40363 - Steampunk Institute Main Styles */
+
+/* ===== CSS RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    line-height: 1.6;
+    color: #F5F5DC;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(139, 105, 20, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 40% 80%, rgba(184, 115, 51, 0.1) 0%, transparent 25%),
+        linear-gradient(135deg, #2C1810 0%, #1A0F0A 50%, #2C1810 100%);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #B8860B;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+a {
+    color: #B87333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #B8860B;
+    text-decoration: underline;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.main-content {
+    padding: 2rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== HEADER & NAVIGATION STYLES ===== */
+header {
+    background: 
+        linear-gradient(135deg, rgba(184, 134, 11, 0.9), rgba(139, 105, 20, 0.9));
+    border-bottom: 3px solid #B8860B;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 100;
+}
+
+nav {
+    background: 
+        linear-gradient(135deg, rgba(139, 105, 20, 0.95), rgba(74, 74, 74, 0.95));
+    border-bottom: 2px solid #B87333;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 99;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #F5F5DC;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: #2C1810;
+    background: linear-gradient(135deg, #B8860B, #8B6914);
+    border-color: #B8860B;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: 
+        linear-gradient(135deg, rgba(139, 105, 20, 0.9), rgba(74, 74, 74, 0.9));
+    border-top: 3px solid #B8860B;
+    color: #F5F5DC;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 100;
+}
+
+footer p {
+    font-family: 'Cinzel', serif;
+    margin: 0;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+
+.p-1 { padding: 1rem; }
+.p-2 { padding: 2rem; }
+.p-3 { padding: 3rem; }
+
+/* ===== RESPONSIVE BASE ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.7rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    nav a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .main-content {
+        padding: 1rem 0;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+}
