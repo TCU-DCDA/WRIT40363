@@ -1,0 +1,38 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'Musk_Watcher/musk-tracker-app/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+          
+      - name: Install dependencies
+        run: |
+          cd Musk_Watcher/musk-tracker-app
+          npm install
+          
+      - name: Build application
+        run: |
+          cd Musk_Watcher/musk-tracker-app
+          npm run build
+          
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: Musk_Watcher/musk-tracker-app
+          scope: ${{ secrets.VERCEL_ORG_ID }}
