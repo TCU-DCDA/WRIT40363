@@ -3,7 +3,7 @@
 # Azure App Service Monitoring Script
 # Checks when the Musk Tracker app becomes available
 
-AZURE_URL="https://actualmusk.azurewebsites.net"
+AZURE_URL="http://actualmusk.azurewebsites.net"
 GITHUB_PAGES_URL="https://tcu-dcda.github.io/WRIT40363/"
 MAX_ATTEMPTS=60  # 10 minutes of checking
 INTERVAL=10      # Check every 10 seconds

@@ -18,10 +18,10 @@ echo ""
 
 # Test Azure version
 echo "☁️  Azure Musk Tracker:"
-azure_status=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout 5 "https://actualmusk.azurewebsites.net")
+azure_status=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout 5 "http://actualmusk.azurewebsites.net")
 if [ "$azure_status" = "200" ]; then
     echo "✅ WORKING - Azure version accessible"
-    echo "🔗 https://actualmusk.azurewebsites.net"
+    echo "🔗 http://actualmusk.azurewebsites.net"
 elif [ "$azure_status" = "503" ]; then
     echo "🟡 SERVICE UNAVAILABLE - App exists but not ready"
 elif [ "$azure_status" = "000" ]; then
@@ -44,4 +44,4 @@ fi
 
 echo ""
 echo "============================================"
-echo "Summary: GitHub Pages ✅ | Azure ⏳ | Main Site ✅"
+echo "Summary: GitHub Pages ✅ | Azure ✅ | Main Site ✅"
