@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Configuration for external services
-    const MUSK_TRACKER_URL = 'https://actualmusk.azurewebsites.net'; // Azure App Service URL
+    const MUSK_TRACKER_URL = 'https://tcu-dcda.github.io/WRIT40363/src/apps/musk-tracker.html'; // GitHub Pages hosted version (temporary)
     
     // Set up external links
     const muskTrackerLink = document.getElementById('musk-tracker-link');

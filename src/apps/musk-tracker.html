@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elon Musk Tracker - Web References</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        .header-image {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            z-index: 1;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        .refresh-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+        .website-list {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .website-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            transition: background-color 0.2s;
+        }
+        .website-item:hover {
+            background-color: #f9f9f9;
+        }
+        .website-item:last-child {
+            border-bottom: none;
+        }
+        .website-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .website-url {
+            color: #666;
+            font-size: 0.9em;
+            word-break: break-all;
+            margin-bottom: 5px;
+        }
+        .website-url a {
+            color: #2196f3;
+            text-decoration: none;
+        }
+        .website-url a:hover {
+            text-decoration: underline;
+        }
+        .website-date {
+            color: #999;
+            font-size: 0.8em;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+        .stats {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .refresh-btn {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .refresh-btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg/800px-Elon_Musk_Colorado_2022_%28cropped2%29.jpg" alt="Elon Musk" class="header-image">
+        <div class="header-content">
+            <h1>🚀 Elon Musk Tracker</h1>
+            <p class="subtitle">Tracking web references to Elon Musk</p>
+        </div>
+    </div>
+
+    <div class="refresh-info">
+        <strong>🔄 Auto-refresh:</strong> This app automatically updates every 15 minutes to find new web references to Elon Musk.
+        <button class="refresh-btn" onclick="refreshData()">Manual Refresh</button>
+        <span id="last-updated"></span>
+    </div>
+
+    <div class="stats" id="stats">
+        <strong>Total References Found:</strong> <span id="total-count">Loading...</span>
+    </div>
+
+    <div class="website-list">
+        <div id="loading" class="loading">
+            <p>🔍 Loading Elon Musk references...</p>
+        </div>
+        <div id="websites-container"></div>
+    </div>
+
+    <script>
+        let websitesData = [];
+
+        async function loadWebsites() {
+            console.log('🔍 Starting to load websites...');
+            try {
+                console.log('📡 Fetching from /api/websites...');
+                const response = await fetch('/api/websites');
+                console.log('📄 Response status:', response.status);
+                
+                websitesData = await response.json();
+                console.log('📊 Data received:', websitesData.length, 'websites');
+                console.log('🎯 First website:', websitesData[0]);
+                
+                displayWebsites();
+                updateStats();
+                updateLastUpdated();
+            } catch (error) {
+                console.error('❌ Error loading websites:', error);
+                document.getElementById('websites-container').innerHTML = 
+                    '<div class="no-results">Error loading data. Please try again later.</div>';
+            }
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        function displayWebsites() {
+            console.log('🎨 Starting to display websites...');
+            const container = document.getElementById('websites-container');
+            console.log('📦 Container found:', !!container);
+            
+            if (websitesData.length === 0) {
+                console.log('📭 No websites data to display');
+                container.innerHTML = '<div class="no-results">No Elon Musk references found yet.</div>';
+                return;
+            }
+
+            console.log('🔧 Building HTML for', websitesData.length, 'websites');
+            const html = websitesData.map(website => `
+                <div class="website-item">
+                    <div class="website-title">${escapeHtml(website.title)}</div>
+                    <div class="website-url">
+                        <a href="${escapeHtml(website.url)}" target="_blank" rel="noopener noreferrer">
+                            ${escapeHtml(website.url)}
+                        </a>
+                    </div>
+                    <div class="website-date">
+                        Found: ${new Date(website.dateScraped).toLocaleString()}
+                    </div>
+                </div>
+            `).join('');
+
+            console.log('✅ Setting HTML content');
+            container.innerHTML = html;
+        }
+
+        function updateStats() {
+            document.getElementById('total-count').textContent = websitesData.length;
+        }
+
+        function updateLastUpdated() {
+            const now = new Date().toLocaleString();
+            document.getElementById('last-updated').textContent = `(Last checked: ${now})`;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        async function refreshData() {
+            const button = event.target;
+            button.disabled = true;
+            button.textContent = 'Refreshing...';
+            
+            try {
+                await fetch('/api/refresh', { method: 'POST' });
+                await loadWebsites();
+            } catch (error) {
+                console.error('Error refreshing:', error);
+            }
+            
+            button.disabled = false;
+            button.textContent = 'Manual Refresh';
+        }
+
+        // Load websites on page load
+        loadWebsites();
+
+        // Auto-refresh every 5 minutes to check for updates
+        setInterval(loadWebsites, 5 * 60 * 1000);
+    </script>
+</body>
+</html>
