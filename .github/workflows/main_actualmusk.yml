@@ -58,7 +58,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-          
       - name: Unzip artifact for deployment
         run: |
           unzip release.zip
@@ -66,8 +65,20 @@ jobs:
           ls -la
           echo "Checking for key files:"
           ls -la package.json || echo "package.json not found"
+          ls -la server.js || echo "server.js not found"
+          ls -la web.config || echo "web.config not found"
           ls -la dist/ || echo "dist folder not found"
-          ls -la dist/app.js || echo "dist/app.js not found"
+          ls -la public/ || echo "public folder not found"
+          echo "Package.json content:"
+          cat package.json || echo "Cannot read package.json"
+          echo "Server.js content:"
+          head -10 server.js || echo "Cannot read server.js"
+          
+      - name: Install production dependencies
+        run: |
+          npm install --production
+          echo "Node modules installed:"
+          ls -la node_modules/ | head -10 || echo "No node_modules found"
       
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
