@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Configuration for external services
-    const MUSK_TRACKER_URL = 'https://your-musk-tracker-app.azurewebsites.net'; // Replace with your Azure URL
+    const MUSK_TRACKER_URL = 'https://writ40363-musk-tracker.azurewebsites.net'; // Replace with your actual Azure URL
     
     // Set up external links
     const muskTrackerLink = document.getElementById('musk-tracker-link');
