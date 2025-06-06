@@ -9,12 +9,12 @@ on:
       - main
   workflow_dispatch:
 
-jobs:
-  build:
+jobs:  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read #This is required for actions/checkout
-        steps:
+      
+    steps:
       - uses: actions/checkout@v4
       
       - name: Set up Node.js version
@@ -53,11 +53,11 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
-    steps:
-      - name: Download artifact from build job
+    steps:      - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: node-app
+          
       - name: Unzip artifact for deployment
         run: |
           unzip release.zip
