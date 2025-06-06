@@ -4,7 +4,8 @@
   "description": "Musk Watcher - An application that tracks web references to Elon Musk in reverse chronological order with real-time updates.",
   "main": "dist/app.js",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node server.js",
+    "start-app": "node dist/app.js",
     "dev": "ts-node src/app.ts",
     "build": "tsc",
     "test": "echo \"No tests specified\" && exit 0",
