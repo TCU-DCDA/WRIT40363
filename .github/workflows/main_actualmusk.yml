@@ -11,23 +11,25 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest    permissions:
+    runs-on: ubuntu-latest
+    permissions:
       contents: read #This is required for actions/checkout
-      
-    steps:
+        steps:
       - uses: actions/checkout@v4
       
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-
+          
       - name: npm install, build, and test
         run: |
           cd Musk_Watcher/musk-tracker-app
           npm install
           npm run build --if-present
-          npm run test --if-present      - name: Zip artifact for deployment
+          npm run test --if-present
+          
+      - name: Zip artifact for deployment
         run: |
           cd Musk_Watcher/musk-tracker-app
           echo "Files before zipping:"
@@ -55,7 +57,9 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: node-app      - name: Unzip artifact for deployment
+          name: node-app
+          
+      - name: Unzip artifact for deployment
         run: |
           unzip release.zip
           echo "Files after unzipping:"
