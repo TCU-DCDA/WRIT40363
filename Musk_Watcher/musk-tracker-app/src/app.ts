@@ -12,6 +12,11 @@ const webScraper = new WebScraper(database);
 // Serve static files
 app.use(express.static(path.join(__dirname, '../public')));
 
+// Root route - serve the main dashboard
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
 // API routes
 app.get('/api/websites', async (req, res) => {
     try {
