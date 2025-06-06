@@ -1,6 +1,15 @@
 // WRIT 40363 - Modern Main JavaScript
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Configuration for external services
+    const MUSK_TRACKER_URL = 'https://your-musk-tracker-app.azurewebsites.net'; // Replace with your Azure URL
+    
+    // Set up external links
+    const muskTrackerLink = document.getElementById('musk-tracker-link');
+    if (muskTrackerLink) {
+        muskTrackerLink.href = MUSK_TRACKER_URL;
+    }
+
     // Mobile navigation toggle
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.querySelector('.nav-menu');

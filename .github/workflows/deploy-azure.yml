@@ -1,0 +1,39 @@
+name: Deploy Musk Tracker to Azure
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'Musk_Watcher/**' ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'Musk_Watcher/musk-tracker-app/package-lock.json'
+        
+    - name: Install dependencies
+      run: |
+        cd Musk_Watcher/musk-tracker-app
+        npm ci
+        
+    - name: Build application
+      run: |
+        cd Musk_Watcher/musk-tracker-app
+        npm run build
+        
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: './Musk_Watcher/musk-tracker-app'
