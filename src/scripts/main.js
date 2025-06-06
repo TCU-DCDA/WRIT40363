@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Configuration for external services
-    const MUSK_TRACKER_URL = 'http://actualmusk.azurewebsites.net'; // Azure hosted version (HTTP working, HTTPS times out)
+    const MUSK_TRACKER_URL = 'https://writ-40363-v2.vercel.app/'; // Vercel deployment (working)
     
     // Set up external links
     const muskTrackerLink = document.getElementById('musk-tracker-link');
