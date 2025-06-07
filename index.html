@@ -873,14 +873,13 @@
             }
         });
 
-        // Mobile navigation toggle (placeholder for future implementation)
+        // Mobile navigation toggle functionality
         const navToggle = document.querySelector('.nav-toggle');
-        if (navToggle) {
-            navToggle.addEventListener('click', () => {
-                // Mobile menu functionality would go here
-                console.log('Mobile menu toggle clicked');
-            });
-        }
+        const navMenu = document.querySelector('.nav-menu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
 
         // P5.js Abstract Animation for Hero Section
         let particles = [];
