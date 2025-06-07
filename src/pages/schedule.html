@@ -5,26 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Schedule - WRIT 40363 Multimedia Authoring</title>
     <meta name="description" content="Complete weekly schedule for WRIT 40363 Multimedia Authoring including assignments, readings, and important dates.">
-    <link rel="stylesheet" href="../styles/modern.css">
-    <link rel="stylesheet" href="../styles/components.css">
-    <link rel="stylesheet" href="../styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/modern-shared.css">
 </head>
 <body>
-    <!-- Header Component -->
-    <div id="header-placeholder"></div>
-    
-    <!-- Navigation Component -->
-    <div id="nav-placeholder"></div>
+    <!-- Modern Navigation -->
+    <nav class="modern-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-brand">
+                <span class="brand-text">WRIT 40363</span>
+                <span class="brand-subtitle">Multimedia Authoring</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="syllabus.html" class="nav-link">Syllabus</a>
+                <a href="schedule.html" class="nav-link active">Schedule</a>
+                <a href="assignments.html" class="nav-link">Assignments</a>
+                <a href="resources-modern.html" class="nav-link">Resources</a>
+                <a href="contact-modern.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     <main class="main-content">
-        <!-- Page Header -->
-        <section class="hero page-hero">
+        <!-- Hero Section -->
+        <section class="hero-section">
             <div class="container">
-                <div class="hero-content animate-fade-in-up">
-                    <h1>Course Schedule</h1>
-                    <p class="lead">
-                        Weekly schedule of topics, assignments, and important dates for WRIT 40363 Multimedia Authoring
-                    </p>
+                <div class="hero-content">
+                    <h1 class="hero-title fade-in">Course Schedule</h1>
+                    <p class="hero-subtitle fade-in">Weekly schedule of topics, assignments, and important dates for WRIT 40363 Multimedia Authoring</p>
                 </div>
             </div>
         </section>
@@ -32,48 +41,40 @@
         <div class="container">
 
         <!-- Academic Calendar -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">📅</div>
-                    <h2>Important Dates</h2>
-                </div>
-                <div class="card-content">
-                    <div class="dates-timeline" style="display: grid; gap: 1rem;">
-                        <div class="date-milestone" style="display: flex; align-items: center; padding: 1rem; background: var(--bg-secondary); border-radius: var(--border-radius); border-left: 4px solid var(--primary-purple);">
-                            <div class="date-marker" style="font-weight: 600; color: var(--primary-purple); min-width: 80px;">Sept 1</div>
-                            <div class="date-content">
-                                <h3 style="margin: 0 0 0.25rem 0; font-size: 1.125rem;">Labor Day Holiday</h3>
-                                <p style="margin: 0; color: var(--text-secondary);">No classes scheduled</p>
-                            </div>
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">📅 Important Dates</h2>
+            </div>
+            <div class="card-content">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>September 1</h4>
+                            <p>Labor Day Holiday - No classes scheduled</p>
                         </div>
-                        <div class="date-milestone" style="display: flex; align-items: center; padding: 1rem; background: var(--bg-secondary); border-radius: var(--border-radius); border-left: 4px solid var(--primary-purple);">
-                            <div class="date-marker" style="font-weight: 600; color: var(--primary-purple); min-width: 80px;">Oct 8</div>
-                            <div class="date-content">
-                                <h3 style="margin: 0 0 0.25rem 0; font-size: 1.125rem;">Fall Break Begins</h3>
-                                <p style="margin: 0; color: var(--text-secondary);">Classes resume October 13th</p>
-                            </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>October 8</h4>
+                            <p>Fall Break Begins - Classes resume October 13th</p>
                         </div>
-                        <div class="date-milestone" style="display: flex; align-items: center; padding: 1rem; background: var(--bg-secondary); border-radius: var(--border-radius); border-left: 4px solid var(--primary-purple);">
-                            <div class="date-marker" style="font-weight: 600; color: var(--primary-purple); min-width: 80px;">Nov 22</div>
-                            <div class="date-content">
-                                <h3 style="margin: 0 0 0.25rem 0; font-size: 1.125rem;">Thanksgiving Break</h3>
-                                <p style="margin: 0; color: var(--text-secondary);">Classes resume December 1st</p>
-                            </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>November 22</h4>
+                            <p>Thanksgiving Break - Classes resume December 1st</p>
                         </div>
-                        <div class="date-milestone" style="display: flex; align-items: center; padding: 1rem; background: var(--bg-secondary); border-radius: var(--border-radius); border-left: 4px solid var(--primary-purple);">
-                            <div class="date-marker" style="font-weight: 600; color: var(--primary-purple); min-width: 80px;">Dec 3</div>
-                            <div class="date-content">
-                                <h3 style="margin: 0 0 0.25rem 0; font-size: 1.125rem;">Final Class Session</h3>
-                                <p style="margin: 0; color: var(--text-secondary);">Last regular class meeting</p>
-                            </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>December 3</h4>
+                            <p>Final Class Session - Last regular class meeting</p>
                         </div>
-                        <div class="date-milestone highlight" style="display: flex; align-items: center; padding: 1rem; background: linear-gradient(135deg, var(--primary-purple), var(--accent-magenta)); color: var(--white); border-radius: var(--border-radius);">
-                            <div class="date-marker" style="font-weight: 600; min-width: 80px;">Finals</div>
-                            <div class="date-content">
-                                <h3 style="margin: 0 0 0.25rem 0; font-size: 1.125rem;">Final Project Presentations</h3>
-                                <p style="margin: 0; opacity: 0.9;">During finals week</p>
-                            </div>
+                    </div>
+                    <div class="card card-highlight">
+                        <div class="card-content">
+                            <h4>Finals Week</h4>
+                            <p>Final Project Presentations</p>
                         </div>
                     </div>
                 </div>
@@ -81,70 +82,86 @@
         </section>
 
         <!-- Unit 1: Web Development Basics -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">🌐</div>
-                    <h2>Unit I: Web Development Foundations</h2>
+        <section class="section fade-in">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🌐</div>
+                    <h2 class="card-title">Unit I: Web Development Foundations</h2>
                 </div>
                 <div class="card-content">
-                    <div class="schedule-unit">
-                        <div class="week-block" style="margin-bottom: 2rem; border-bottom: 1px solid var(--gray-200); padding-bottom: 2rem;">
-                            <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">Week 1: Course Introduction</h3>
-                            <div class="session-details" style="display: grid; gap: 0.75rem;">
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 1:</strong> Course Introduction & Overview of Digital Humanities
-                                </div>
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 2:</strong> HTML Basics & Document Structure
-                                </div>
-                                <div class="assignment-due" style="padding: 0.75rem; background: var(--accent-magenta); color: var(--white); border-radius: var(--border-radius); font-weight: 500;">
-                                    🔧 Laboratory Exercise 1 due Sunday 11:30 pm
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Week 1: Course Introduction</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="session-list">
+                                    <div class="session-item">
+                                        <strong>Session 1:</strong> Course Introduction & Overview of Digital Humanities
+                                    </div>
+                                    <div class="session-item">
+                                        <strong>Session 2:</strong> HTML Basics & Document Structure
+                                    </div>
+                                    <div class="badge badge-accent">
+                                        🔧 Laboratory Exercise 1 due Sunday 11:30 pm
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="week-block" style="margin-bottom: 2rem; border-bottom: 1px solid var(--gray-200); padding-bottom: 2rem;">
-                            <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">Week 2: CSS Fundamentals</h3>
-                            <div class="session-details" style="display: grid; gap: 0.75rem;">
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 1:</strong> CSS Basics & Styling
-                                </div>
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 2:</strong> CSS Layout & Flexbox
-                                </div>
-                                <div class="assignment-due" style="padding: 0.75rem; background: var(--accent-magenta); color: var(--white); border-radius: var(--border-radius); font-weight: 500;">
-                                    🔧 Laboratory Exercise 2 due Sunday 11:30 pm
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Week 2: CSS Fundamentals</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="session-list">
+                                    <div class="session-item">
+                                        <strong>Session 1:</strong> CSS Basics & Styling
+                                    </div>
+                                    <div class="session-item">
+                                        <strong>Session 2:</strong> CSS Layout & Flexbox
+                                    </div>
+                                    <div class="badge badge-accent">
+                                        🔧 Laboratory Exercise 2 due Sunday 11:30 pm
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="week-block" style="margin-bottom: 2rem; border-bottom: 1px solid var(--gray-200); padding-bottom: 2rem;">
-                            <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">Week 3: JavaScript Introduction</h3>
-                            <div class="session-details" style="display: grid; gap: 0.75rem;">
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 1:</strong> JavaScript Basics & Variables
-                                </div>
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 2:</strong> Functions & Event Handling
-                                </div>
-                                <div class="assignment-due" style="padding: 0.75rem; background: var(--primary-purple); color: var(--white); border-radius: var(--border-radius); font-weight: 500;">
-                                    💬 Discussion Post 1 due Sunday 11:30 pm
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Week 3: JavaScript Introduction</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="session-list">
+                                    <div class="session-item">
+                                        <strong>Session 1:</strong> JavaScript Basics & Variables
+                                    </div>
+                                    <div class="session-item">
+                                        <strong>Session 2:</strong> Functions & Event Handling
+                                    </div>
+                                    <div class="badge badge-primary">
+                                        💬 Discussion Post 1 due Sunday 11:30 pm
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="week-block" style="margin-bottom: 2rem;">
-                            <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">Week 4: Responsive Design</h3>
-                            <div class="session-details" style="display: grid; gap: 0.75rem;">
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 1:</strong> Responsive Design Principles
-                                </div>
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 2:</strong> CSS Grid & Media Queries
-                                </div>
-                                <div class="assignment-due" style="padding: 0.75rem; background: var(--accent-magenta); color: var(--white); border-radius: var(--border-radius); font-weight: 500;">
-                                    🔧 Laboratory Exercise 3 due Sunday 11:30 pm
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Week 4: Responsive Design</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="session-list">
+                                    <div class="session-item">
+                                        <strong>Session 1:</strong> Responsive Design Principles
+                                    </div>
+                                    <div class="session-item">
+                                        <strong>Session 2:</strong> CSS Grid & Media Queries
+                                    </div>
+                                    <div class="badge badge-accent">
+                                        🔧 Laboratory Exercise 3 due Sunday 11:30 pm
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -154,46 +171,54 @@
         </section>
 
         <!-- Unit 2: Working with Data -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">📊</div>
-                    <h2>Unit II: Data & APIs</h2>
+        <section class="section fade-in">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📊</div>
+                    <h2 class="card-title">Unit II: Data & APIs</h2>
                 </div>
                 <div class="card-content">
-                    <div class="schedule-unit">
-                        <div class="week-block" style="margin-bottom: 2rem; border-bottom: 1px solid var(--gray-200); padding-bottom: 2rem;">
-                            <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">Week 5: Database Fundamentals</h3>
-                            <div class="session-details" style="display: grid; gap: 0.75rem;">
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 1:</strong> Database Creation & Management
-                                </div>
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 2:</strong> JSON Data & Structure
-                                </div>
-                                <div class="assignment-due" style="padding: 0.75rem; background: var(--accent-magenta); color: var(--white); border-radius: var(--border-radius); font-weight: 500;">
-                                    🔧 Laboratory Exercise 4 due Sunday 11:30 pm
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Week 5: Database Fundamentals</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="session-list">
+                                    <div class="session-item">
+                                        <strong>Session 1:</strong> Database Creation & Management
+                                    </div>
+                                    <div class="session-item">
+                                        <strong>Session 2:</strong> JSON Data & Structure
+                                    </div>
+                                    <div class="badge badge-accent">
+                                        🔧 Laboratory Exercise 4 due Sunday 11:30 pm
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="week-block" style="margin-bottom: 2rem; border-bottom: 1px solid var(--gray-200); padding-bottom: 2rem;">
-                            <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">Week 6: Data Collection</h3>
-                            <div class="session-details" style="display: grid; gap: 0.75rem;">
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 1:</strong> Web Scraping Techniques
-                                    <div class="required-reading" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
-                                        📖 Read: <a href="https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/" target="_blank" style="color: var(--primary-purple);">"Data Biographies"</a>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Week 6: Data Collection</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="session-list">
+                                    <div class="session-item">
+                                        <strong>Session 1:</strong> Web Scraping Techniques
+                                        <div class="required-reading">
+                                            📖 Read: <a href="https://gijn.org/2017/03/27/data-biographies-getting-to-know-your-data/" target="_blank">"Data Biographies"</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="session" style="padding: 0.75rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                    <strong>Session 2:</strong> Working with APIs
-                                    <div class="required-reading" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
-                                        📖 Read: <a href="https://medium.com/epfl-extension-school/an-illustrated-introduction-to-apis-10f8000313b9" target="_blank" style="color: var(--primary-purple);">"Introduction to APIs"</a>
+                                    <div class="session-item">
+                                        <strong>Session 2:</strong> Working with APIs
+                                        <div class="required-reading">
+                                            📖 Read: <a href="https://medium.com/epfl-extension-school/an-illustrated-introduction-to-apis-10f8000313b9" target="_blank">"Introduction to APIs"</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="assignment-due" style="padding: 0.75rem; background: var(--primary-purple); color: var(--white); border-radius: var(--border-radius); font-weight: 500;">
-                                    📋 Self-Reflection Essay 1 due Sunday 11:30 pm
+                                    <div class="badge badge-secondary">
+                                        📋 Self-Reflection Essay 1 due Sunday 11:30 pm
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -5,27 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Syllabus - WRIT 40363 Multimedia Authoring</title>
     <meta name="description" content="Complete syllabus for WRIT 40363 Multimedia Authoring course including policies, objectives, and schedule.">
-    <link rel="stylesheet" href="../styles/modern.css">
-    <link rel="stylesheet" href="../styles/components.css">
-    <link rel="stylesheet" href="../styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/modern-shared.css">
 </head>
 <body>
-    <!-- Header Component -->
-    <div id="header-placeholder"></div>
-    
-    <!-- Navigation Component -->
-    <div id="nav-placeholder"></div>
+    <!-- Modern Navigation -->
+    <nav class="modern-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-brand">
+                <span class="brand-text">WRIT 40363</span>
+                <span class="brand-subtitle">Multimedia Authoring</span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="syllabus.html" class="nav-link active">Syllabus</a>
+                <a href="schedule.html" class="nav-link">Schedule</a>
+                <a href="assignments.html" class="nav-link">Assignments</a>
+                <a href="resources-modern.html" class="nav-link">Resources</a>
+                <a href="contact-modern.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     <main class="main-content">
-        <!-- Page Header -->
-        <section class="hero page-hero">
+        <!-- Hero Section -->
+        <section class="hero-section">
             <div class="container">
-                <div class="hero-content animate-fade-in-up">
-                    <h1>Course Syllabus</h1>
-                    <p class="lead">
-                        Complete course policies, learning objectives, schedule, and assessment information 
-                        for WRIT 40363 Multimedia Authoring
-                    </p>
+                <div class="hero-content">
+                    <h1 class="hero-title fade-in">Course Syllabus</h1>
+                    <p class="hero-subtitle fade-in">Complete course policies, learning objectives, and assessment information for WRIT 40363 Multimedia Authoring</p>
                 </div>
             </div>
         </section>
@@ -33,58 +41,69 @@
         <div class="container">
 
         <!-- Course Information Panel -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">📚</div>
-                    <h2>Course Information</h2>
-                </div>
-                <div class="card-content">
-                    <div class="info-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
-                        <div class="info-section">
-                            <h3>Class Details</h3>
-                            <p><strong>Location:</strong> Scharbauer Hall ###</p>
-                            <p><strong>Time:</strong> Tuesday & Thursday, 12:30–1:50 CST</p>
-                            <p><strong>Semester:</strong> Fall 2025 (8/18–12/12)</p>
-                            <p><strong>Credits:</strong> 3 credit hours</p>
-                        </div>
-                        <div class="info-section">
-                            <h3>Instructor</h3>
-                            <p><strong>Professor:</strong> Dr. Curt Rode</p>
-                            <p><strong>Office:</strong> Scharbauer Hall 2006</p>
-                            <p><strong>Office Hours:</strong> By appointment</p>
-                            <p><strong>Schedule:</strong> <a href="https://calendly.com/c-rode/appointments" target="_blank">calendly.com/c-rode/appointments</a></p>
-                            <p><strong>Email:</strong> <a href="mailto:c.rode@tcu.edu">c.rode@tcu.edu</a></p>
-                            <p><strong>Phone:</strong> (817) 257-6983</p>
-                        </div>
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">Course Information</h2>
+            </div>
+            <div class="card-content">
+                <div class="grid-2">
+                    <div class="info-section">
+                        <h3>Class Details</h3>
+                        <ul class="modern-list">
+                            <li><span class="list-icon">📍</span><strong>Location:</strong> Scharbauer Hall ###</li>
+                            <li><span class="list-icon">⏰</span><strong>Time:</strong> Tuesday & Thursday, 12:30–1:50 CST</li>
+                            <li><span class="list-icon">📅</span><strong>Semester:</strong> Fall 2025 (8/18–12/12)</li>
+                            <li><span class="list-icon">💳</span><strong>Credits:</strong> 3 credit hours</li>
+                        </ul>
+                    </div>
+                    <div class="info-section">
+                        <h3>Instructor</h3>
+                        <ul class="modern-list">
+                            <li><span class="list-icon">👨‍🏫</span><strong>Professor:</strong> Dr. Curt Rode</li>
+                            <li><span class="list-icon">🏢</span><strong>Office:</strong> Scharbauer Hall 2006</li>
+                            <li><span class="list-icon">📧</span><strong>Email:</strong> <a href="mailto:c.rode@tcu.edu">c.rode@tcu.edu</a></li>
+                            <li><span class="list-icon">📞</span><strong>Phone:</strong> (817) 257-6983</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Important Dates -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">📅</div>
-                    <h2>Important Dates</h2>
-                </div>
-                <div class="card-content">
-                    <div class="dates-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-                        <div class="date-item" style="padding: 1rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                            <strong>September 1:</strong> Labor Day Holiday
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">📅 Important Dates</h2>
+            </div>
+            <div class="card-content">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>September 1</h4>
+                            <p>Labor Day Holiday</p>
                         </div>
-                        <div class="date-item" style="padding: 1rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                            <strong>October 8:</strong> Fall Break (resume 10/13)
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>October 8</h4>
+                            <p>Fall Break (resume 10/13)</p>
                         </div>
-                        <div class="date-item" style="padding: 1rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                            <strong>November 22:</strong> Thanksgiving Break (resume 12/1)
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>November 22</h4>
+                            <p>Thanksgiving Break (resume 12/1)</p>
                         </div>
-                        <div class="date-item" style="padding: 1rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                            <strong>December 3:</strong> Last Class Session
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>December 3</h4>
+                            <p>Last Class Session</p>
                         </div>
-                        <div class="date-item highlight" style="padding: 1rem; background: linear-gradient(135deg, var(--primary-purple), var(--accent-magenta)); color: var(--white); border-radius: var(--border-radius); grid-column: span 2;">
-                            <strong>Finals Week:</strong> Final Project Presentations
+                    </div>
+                    <div class="card card-highlight">
+                        <div class="card-content">
+                            <h4>Finals Week</h4>
+                            <p>Final Project Presentations</p>
                         </div>
                     </div>
                 </div>
@@ -92,62 +111,76 @@
         </section>
 
         <!-- Course Description -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">🎯</div>
-                    <h2>Course Description</h2>
-                </div>
-                <div class="card-content">
-                    <blockquote style="font-style: italic; font-size: 1.125rem; color: var(--primary-purple); border-left: 4px solid var(--primary-purple); padding-left: 1rem; margin: 1.5rem 0;">
-                        "Explores the complex relationship between new media, culture, and design, with particular emphasis on the production of mobile applications and eBooks publications."
-                    </blockquote>
-                    <p>This advanced course focuses on multimedia authoring principles to develop mobile applications and electronic books that support scholarly work in the humanities and social sciences. Students will master HTML, CSS, and JavaScript while learning to create interactive digital experiences.</p>
-                    <p>This is an introductory course designed for students interested in digital media and working effectively in digital environments.</p>
-                </div>
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">🎯 Course Description</h2>
+            </div>
+            <div class="card-content">
+                <blockquote class="quote-card">
+                    "Explores the complex relationship between new media, culture, and design, with particular emphasis on the production of mobile applications and eBooks publications."
+                </blockquote>
+                <p>This advanced course focuses on multimedia authoring principles to develop mobile applications and electronic books that support scholarly work in the humanities and social sciences. Students will master HTML, CSS, and JavaScript while learning to create interactive digital experiences.</p>
+                <p>This is an introductory course designed for students interested in digital media and working effectively in digital environments.</p>
             </div>
         </section>
 
         <!-- Prerequisites -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">📋</div>
-                    <h2>Prerequisites & Program Connections</h2>
-                </div>
-                <div class="card-content">
-                    <p><strong>Prerequisites:</strong> No prior experience required. All students welcome.</p>
-                    <div class="program-connections" style="margin-top: 1.5rem;">
-                        <h3>Program Affiliations</h3>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--gray-200);"><strong>Digital Culture and Data Analytics:</strong> Required course</li>
-                            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--gray-200);"><strong>Writing & Rhetoric:</strong> Digital Rhetorics and Design specialization</li>
-                            <li style="padding: 0.5rem 0;"><strong>English Studies:</strong> Elective option</li>
-                        </ul>
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">Prerequisites & Program Connections</h2>
+            </div>
+            <div class="card-content">
+                <p><strong>Prerequisites:</strong> No prior experience required. All students welcome.</p>
+                <div class="program-connections">
+                    <h3>Program Affiliations</h3>
+                    <div class="grid-3">
+                        <div class="card">
+                            <div class="card-content">
+                                <h4>Digital Culture and Data Analytics</h4>
+                                <p>Required course</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <h4>Writing & Rhetoric</h4>
+                                <p>Digital Rhetorics and Design specialization</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <h4>English Studies</h4>
+                                <p>Elective option</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Learning Outcomes -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">🎓</div>
-                    <h2>Learning Objectives</h2>
-                </div>
-                <div class="card-content">
-                    <div class="outcomes-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                        <div class="outcome-category">
-                            <h3>Primary Objectives</h3>
-                            <ol style="line-height: 1.6;">
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">🎓 Learning Objectives</h2>
+            </div>
+            <div class="card-content">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Primary Objectives</h3>
+                        </div>
+                        <div class="card-content">
+                            <ol class="modern-list">
                                 <li>Students will use their skill in web development as an exploratory research tool designed to address important cultural questions.</li>
-                                <li>Students will reflect on the limitations of multimodal communication common to the Digital Humanities.</li>
+                                <li>Students will reflect on the limitations of multimodal communication common to multimedia authoring.</li>
                             </ol>
                         </div>
-                        <div class="outcome-category">
-                            <h3>Program Standards</h3>
-                            <ol start="3" style="line-height: 1.6;">
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Program Standards</h3>
+                        </div>
+                        <div class="card-content">
+                            <ol class="modern-list" start="3">
                                 <li>Students will demonstrate an ability to compose digital arguments [DCDA0]</li>
                                 <li>Students will analyze how rhetorical acts and texts emerge from specific cultural discourses [WRIT02]</li>
                                 <li>Students will use writing to gain and express understanding of discipline-specific content [TCU Core]</li>
@@ -159,91 +192,110 @@
         </section>
 
         <!-- Teaching Methodology -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">🧑‍🏫</div>
-                    <h2>Teaching Methods</h2>
-                </div>
-                <div class="card-content">
-                    <p>The first third of our semester focuses on mastering the fundamental skills of HTML, CSS, and JavaScript through a series of hands-on lab exercises. The remainder of our time will be devoted to applying these digital authoring skills to web applications relevant to scholarly work in the Humanities and Social Sciences.</p>
-                    <p>Our approach combines theoretical discussion, hands-on demonstrations, guided practice, and individual mentorship.</p>
-                </div>
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">🧑‍🏫 Teaching Methods</h2>
+            </div>
+            <div class="card-content">
+                <p>The first third of our semester focuses on mastering the fundamental skills of HTML, CSS, and JavaScript through a series of hands-on lab exercises. The remainder of our time will be devoted to applying these digital authoring skills to web applications relevant to scholarly work in the Humanities and Social Sciences.</p>
+                <p>Our approach combines theoretical discussion, hands-on demonstrations, guided practice, and individual mentorship.</p>
             </div>
         </section>
 
         <!-- Assignments & Grading -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">📝</div>
-                    <h2>Assignments & Assessment</h2>
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">📝 Assignments & Assessment</h2>
+            </div>
+            <div class="card-content">
+                <div class="assessment-philosophy">
+                    <h3>Assessment Philosophy</h3>
+                    <p>This course emphasizes meaningful feedback and self-reflection over traditional point accumulation. Throughout the semester, you will receive detailed guidance marked as <strong>Exceeds</strong>, <strong>Meets</strong>, or <strong>Fails to Meet</strong> Expectations.</p>
                 </div>
-                <div class="card-content">
-                    <div class="assessment-philosophy">
-                        <h3>Assessment Philosophy</h3>
-                        <p>This course emphasizes meaningful feedback and self-reflection over traditional point accumulation. Throughout the semester, you will receive detailed guidance marked as <strong>Exceeds</strong>, <strong>Meets</strong>, or <strong>Fails to Meet</strong> Expectations.</p>
-                    </div>
-                    
-                    <div class="assignments-overview" style="margin-top: 2rem;">
-                        <h3>Course Assignments</h3>
-                        <div class="assignment-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
-                            <div class="assignment-type" style="padding: 1.5rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                <h4>Laboratory Exercises (6)</h4>
-                                <p>Hands-on technical challenges building your digital development skills</p>
+                
+                <div class="assignments-overview">
+                    <h3>Course Assignments</h3>
+                    <div class="grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Laboratory Exercises (6)</h4>
                             </div>
-                            <div class="assignment-type" style="padding: 1.5rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                <h4>Discussion Posts (3)</h4>
-                                <p>Thoughtful discourse on digital humanities theory and practice</p>
+                            <div class="card-content">
+                                <p>Hands-on technical challenges building your multimedia authoring skills</p>
                             </div>
-                            <div class="assignment-type" style="padding: 1.5rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
-                                <h4>Self-Reflection Essays (3)</h4>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Discussion Posts (3)</h4>
+                            </div>
+                            <div class="card-content">
+                                <p>Thoughtful discourse on multimedia theory and practice</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Self-Reflection Essays (3)</h4>
+                            </div>
+                            <div class="card-content">
                                 <p>Personal assessment of learning and growth throughout the semester</p>
                             </div>
-                            <div class="assignment-type highlight" style="padding: 1.5rem; background: linear-gradient(135deg, var(--primary-purple), var(--accent-magenta)); color: var(--white); border-radius: var(--border-radius);">
-                                <h4>Final Project</h4>
+                        </div>
+                        <div class="card card-highlight">
+                            <div class="card-header">
+                                <h4 class="card-title">Final Project</h4>
+                            </div>
+                            <div class="card-content">
                                 <p>Individual or collaborative capstone demonstrating course mastery</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="grading-criteria" style="margin-top: 2rem;">
-                        <h3>Evaluation Categories</h3>
-                        <ul style="line-height: 1.6;">
-                            <li><strong>Technical Competency:</strong> HTML, CSS, and JavaScript mastery</li>
-                            <li><strong>User Experience:</strong> Accessibility and design principles</li>
-                            <li><strong>Project Planning:</strong> Design thinking and architectural planning</li>
-                            <li><strong>Collaboration:</strong> Working effectively with peers and providing feedback</li>
-                        </ul>
-                    </div>
+                <div class="grading-criteria">
+                    <h3>Evaluation Categories</h3>
+                    <ul class="modern-list">
+                        <li><span class="list-icon">💻</span><strong>Technical Competency:</strong> HTML, CSS, and JavaScript mastery</li>
+                        <li><span class="list-icon">🎨</span><strong>User Experience:</strong> Accessibility and design principles</li>
+                        <li><span class="list-icon">📐</span><strong>Project Planning:</strong> Design thinking and architectural planning</li>
+                        <li><span class="list-icon">🤝</span><strong>Collaboration:</strong> Working effectively with peers and providing feedback</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- Resources & Requirements -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">💻</div>
-                    <h2>Resources & Requirements</h2>
-                </div>
-                <div class="card-content">
-                    <div class="resources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                        <div class="resource-section">
-                            <h3>Required Technology</h3>
-                            <ul style="line-height: 1.6;">
-                                <li><strong>Computer:</strong> Reliable device meeting TCU Online standards</li>
-                                <li><strong>Code Editor:</strong> Visual Studio Code (free download)</li>
-                                <li><strong>Learning Platform:</strong> TCU Online access required</li>
-                                <li><strong>Communication:</strong> Active TCU email (checked daily)</li>
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">💻 Resources & Requirements</h2>
+            </div>
+            <div class="card-content">
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Required Technology</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul class="modern-list">
+                                <li><span class="list-icon">💻</span><strong>Computer:</strong> Reliable device meeting TCU Online standards</li>
+                                <li><span class="list-icon">📝</span><strong>Code Editor:</strong> Visual Studio Code (free download)</li>
+                                <li><span class="list-icon">🌐</span><strong>Learning Platform:</strong> TCU Online access required</li>
+                                <li><span class="list-icon">📧</span><strong>Communication:</strong> Active TCU email (checked daily)</li>
                             </ul>
                         </div>
-                        <div class="resource-section">
-                            <h3>Artificial Intelligence Policy</h3>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Artificial Intelligence Policy</h3>
+                        </div>
+                        <div class="card-content">
                             <p>Generative AI tools (ChatGPT, Google Gemini, etc.) are <strong>encouraged</strong> for coursework, provided all usage is documented through detailed code comments.</p>
                         </div>
-                        <div class="resource-section">
-                            <h3>Digital Expression Lab</h3>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Digital Expression Lab</h3>
+                        </div>
+                        <div class="card-content">
                             <p>The Center for Digital Expression (Scharbauer 2003) offers specialized consultation for multimedia projects. Visit <a href="https://cdex.tcu.edu" target="_blank">cdex.tcu.edu</a> for scheduling.</p>
                         </div>
                     </div>
@@ -252,28 +304,41 @@
         </section>
 
         <!-- Course Policies -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">📜</div>
-                    <h2>Course Policies</h2>
-                </div>
-                <div class="card-content">
-                    <div class="policy-sections" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                        <div class="policy-item">
-                            <h3>Attendance</h3>
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">📜 Course Policies</h2>
+            </div>
+            <div class="card-content">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Attendance</h3>
+                        </div>
+                        <div class="card-content">
                             <p>While no formal attendance records are kept, consistent participation is essential for mastering technical skills. Each session builds upon previous work. Please notify instructors of anticipated absences.</p>
                         </div>
-                        <div class="policy-item">
-                            <h3>Participation</h3>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Participation</h3>
+                        </div>
+                        <div class="card-content">
                             <p>Active engagement is crucial for learning new technologies. The course thrives on collaborative problem-solving and creative experimentation. Participate early and often.</p>
                         </div>
-                        <div class="policy-item">
-                            <h3>Late Work</h3>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Late Work</h3>
+                        </div>
+                        <div class="card-content">
                             <p>No penalties for late submissions, though timely completion allows for optimal feedback. Contact instructors before deadlines for extensions. Patterns of missing work may affect final assessment.</p>
                         </div>
-                        <div class="policy-item">
-                            <h3>Inclusive Environment</h3>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Inclusive Environment</h3>
+                        </div>
+                        <div class="card-content">
                             <p>This course welcomes and celebrates all members of the LGBTQIA+ community. We maintain a safe learning environment and will not tolerate discriminatory language or behavior.</p>
                         </div>
                     </div>
@@ -282,27 +347,75 @@
         </section>
 
         <!-- Land Acknowledgment -->
-        <section class="section">
-            <div class="info-card">
-                <div class="info-card-header">
-                    <div class="info-card-icon">🌍</div>
-                    <h2>Land Acknowledgment</h2>
-                </div>
-                <div class="card-content">
-                    <blockquote style="font-style: italic; font-size: 1.125rem; color: var(--primary-purple); border-left: 4px solid var(--primary-purple); padding-left: 1rem; margin: 1.5rem 0;">
-                        "This ancient land, for all our relations. We respectfully acknowledge all Native American peoples who have lived on this land since time immemorial. TCU especially acknowledges and pays respect to the Wichita and Affiliated Tribes (Kitikiti'sh/Kirikirish), upon whose historical homeland our university is located."
-                    </blockquote>
-                </div>
+        <section class="card fade-in">
+            <div class="card-header">
+                <h2 class="card-title">🌍 Land Acknowledgment</h2>
+            </div>
+            <div class="card-content">
+                <blockquote class="quote-card">
+                    "This ancient land, for all our relations. We respectfully acknowledge all Native American peoples who have lived on this land since time immemorial. TCU especially acknowledges and pays respect to the Wichita and Affiliated Tribes (Kitikiti'sh/Kirikirish), upon whose historical homeland our university is located."
+                </blockquote>
             </div>
         </section>
 
         </div>
     </main>
 
-    <!-- Footer Component -->
-    <div id="footer-placeholder"></div>
+    <!-- Modern Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WRIT 40363</h3>
+                    <p>Multimedia Authoring</p>
+                    <p>Dr. Curt Rode</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Course Home</a></li>
+                        <li><a href="syllabus.html">Syllabus</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="assignments.html">Assignments</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact-modern.html">Contact Info</a></li>
+                        <li><a href="resources-modern.html">Resources</a></li>
+                        <li><a href="mailto:c.rode@tcu.edu">Email Dr. Rode</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Texas Christian University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <script src="../scripts/components-pages.js"></script>
-    <script src="../scripts/main.js"></script>
+    <script>
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>

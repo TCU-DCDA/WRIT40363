@@ -6,6 +6,7 @@
     <title>WRIT 40363 - Multimedia Authoring | Dr. Curt Rode</title>
     <meta name="description" content="Advanced course in multimedia authoring focusing on mobile applications and electronic books. Learn design principles, user experience, and digital publishing.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
     <style>
         :root {
             /* Modern Academic Color Palette */
@@ -154,7 +155,7 @@
         /* Hero Section */
         .hero {
             padding: 8rem 0 6rem;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
             position: relative;
             overflow: hidden;
         }
@@ -167,9 +168,20 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.1) 100%);
             pointer-events: none;
+        }
+
+        .hero-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.7;
         }
 
         .hero-content {
@@ -353,15 +365,18 @@
         }
 
         .feature-icon {
-            width: 3rem;
-            height: 3rem;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            width: 100%;
+            height: 200px;
             border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            overflow: hidden;
+            position: relative;
+            background: var(--bg-secondary);
+        }
+
+        .feature-animation {
+            width: 100%;
+            height: 100%;
         }
 
         .feature-title {
@@ -438,6 +453,12 @@
             align-items: center;
             justify-content: center;
             font-size: 1.125rem;
+            overflow: hidden;
+        }
+
+        .quick-link-animation {
+            width: 100%;
+            height: 100%;
         }
 
         .quick-link-title {
@@ -600,7 +621,6 @@
     <nav class="modern-nav">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
-                <span>📚</span>
                 <span>WRIT 40363</span>
             </a>
             
@@ -623,17 +643,14 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div id="hero-animation" class="hero-animation"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span>🎓</span>
-                    <span>Fall 2025 • Advanced Course</span>
-                </div>
                 
                 <h1>Multimedia Authoring</h1>
                 
                 <p class="hero-subtitle">
-                    Master mobile applications and digital publishing through design thinking, 
+                    Study mobile applications and digital publishing through design thinking, 
                     user experience principles, and cutting-edge multimedia technologies.
                 </p>
                 
@@ -650,19 +667,14 @@
                         <span class="stat-value">T/Th</span>
                         <span class="stat-label">12:30-1:50</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-value">TCU</span>
-                        <span class="stat-label">Campus</span>
-                    </div>
+                    
                 </div>
                 
                 <div class="hero-cta">
                     <a href="src/pages/syllabus.html" class="btn btn-primary">
-                        <span>📋</span>
                         <span>View Syllabus</span>
                     </a>
                     <a href="src/pages/assignments.html" class="btn btn-outline">
-                        <span>📝</span>
                         <span>Browse Assignments</span>
                     </a>
                 </div>
@@ -683,16 +695,20 @@
             
             <div class="features-grid">
                 <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Mobile Applications</h3>
+                    <div class="feature-icon">
+                        <div id="web-animation" class="feature-animation"></div>
+                    </div>
+                    <h3 class="feature-title">Web Applications</h3>
                     <p class="feature-description">
-                        Design and develop mobile apps using modern frameworks. Learn UI/UX principles, 
-                        platform guidelines, and user-centered design methodologies for iOS and Android.
+                        Build responsive web applications using modern frameworks and technologies. Master 
+                        frontend development, responsive design, and progressive web app principles.
                     </p>
                 </div>
                 
                 <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">📖</div>
+                    <div class="feature-icon">
+                        <div id="storytelling-animation" class="feature-animation"></div>
+                    </div>
                     <h3 class="feature-title">Digital Publishing</h3>
                     <p class="feature-description">
                         Master EPUB standards, interactive e-books, and multimedia integration. 
@@ -701,16 +717,9 @@
                 </div>
                 
                 <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">🎨</div>
-                    <h3 class="feature-title">Design Thinking</h3>
-                    <p class="feature-description">
-                        Apply human-centered design processes including ideation, prototyping, 
-                        and iterative testing to create engaging multimedia experiences.
-                    </p>
-                </div>
-                
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">🔬</div>
+                    <div class="feature-icon">
+                        <div id="interactive-animation" class="feature-animation"></div>
+                    </div>
                     <h3 class="feature-title">Self-Directed Learning</h3>
                     <p class="feature-description">
                         Engage with un-grading methodology focused on growth over grades. 
@@ -734,7 +743,9 @@
             <div class="links-grid">
                 <a href="src/pages/schedule.html" class="quick-link">
                     <div class="quick-link-header">
-                        <div class="quick-link-icon">📅</div>
+                        <div class="quick-link-icon">
+                            <div id="schedule-icon" class="quick-link-animation"></div>
+                        </div>
                         <h3 class="quick-link-title">Weekly Schedule</h3>
                     </div>
                     <p class="quick-link-description">
@@ -744,7 +755,9 @@
                 
                 <a href="src/pages/assignments.html" class="quick-link">
                     <div class="quick-link-header">
-                        <div class="quick-link-icon">📝</div>
+                        <div class="quick-link-icon">
+                            <div id="assignments-icon" class="quick-link-animation"></div>
+                        </div>
                         <h3 class="quick-link-title">Lab Exercises</h3>
                     </div>
                     <p class="quick-link-description">
@@ -754,7 +767,9 @@
                 
                 <a href="src/pages/resources.html" class="quick-link">
                     <div class="quick-link-header">
-                        <div class="quick-link-icon">🛠️</div>
+                        <div class="quick-link-icon">
+                            <div id="tools-icon" class="quick-link-animation"></div>
+                        </div>
                         <h3 class="quick-link-title">Tools & Resources</h3>
                     </div>
                     <p class="quick-link-description">
@@ -764,7 +779,9 @@
                 
                 <a href="src/pages/contact.html" class="quick-link">
                     <div class="quick-link-header">
-                        <div class="quick-link-icon">👨‍🏫</div>
+                        <div class="quick-link-icon">
+                            <div id="instructor-icon" class="quick-link-animation"></div>
+                        </div>
                         <h3 class="quick-link-title">Instructor Support</h3>
                     </div>
                     <p class="quick-link-description">
@@ -774,7 +791,9 @@
                 
                 <a href="https://writ-40363-v2.vercel.app/" class="quick-link" target="_blank">
                     <div class="quick-link-header">
-                        <div class="quick-link-icon">🚀</div>
+                        <div class="quick-link-icon">
+                            <div id="demo-icon" class="quick-link-animation"></div>
+                        </div>
                         <h3 class="quick-link-title">Live Demo</h3>
                     </div>
                     <p class="quick-link-description">
@@ -784,7 +803,9 @@
                 
                 <a href="https://github.com/TCU-DCDA/WRIT40363" class="quick-link" target="_blank">
                     <div class="quick-link-header">
-                        <div class="quick-link-icon">⚙️</div>
+                        <div class="quick-link-icon">
+                            <div id="repository-icon" class="quick-link-animation"></div>
+                        </div>
                         <h3 class="quick-link-title">Course Repository</h3>
                     </div>
                     <p class="quick-link-description">
@@ -860,6 +881,645 @@
                 console.log('Mobile menu toggle clicked');
             });
         }
+
+        // P5.js Abstract Animation for Hero Section
+        let particles = [];
+        let nodes = [];
+        const colors = [
+            [37, 99, 235],    // primary-blue
+            [139, 92, 246],   // accent-purple  
+            [6, 182, 212],    // accent-cyan
+            [16, 185, 129],   // accent-green
+            [245, 158, 11]    // accent-orange
+        ];
+
+        function setup() {
+            let canvas = createCanvas(windowWidth, 600);
+            canvas.parent('hero-animation');
+            canvas.style('position', 'absolute');
+            canvas.style('top', '0');
+            canvas.style('left', '0');
+            canvas.style('z-index', '1');
+            
+            // Create floating particles
+            for (let i = 0; i < 40; i++) {
+                particles.push({
+                    x: random(width),
+                    y: random(height),
+                    size: random(2, 8),
+                    speedX: random(-1, 1),
+                    speedY: random(-1, 1),
+                    color: random(colors),
+                    alpha: random(0.3, 0.8),
+                    pulse: random(TWO_PI)
+                });
+            }
+
+            // Create network nodes
+            for (let i = 0; i < 12; i++) {
+                nodes.push({
+                    x: random(width * 0.1, width * 0.9),
+                    y: random(height * 0.2, height * 0.8),
+                    targetX: random(width * 0.1, width * 0.9),
+                    targetY: random(height * 0.2, height * 0.8),
+                    size: random(4, 12),
+                    color: random(colors),
+                    connections: []
+                });
+            }
+        }
+
+        function draw() {
+            clear(); // Transparent background
+            
+            // Update and draw particles
+            for (let p of particles) {
+                p.x += p.speedX;
+                p.y += p.speedY;
+                p.pulse += 0.03;
+                
+                // Wrap around edges
+                if (p.x < 0) p.x = width;
+                if (p.x > width) p.x = 0;
+                if (p.y < 0) p.y = height;
+                if (p.y > height) p.y = 0;
+                
+                // Draw particle with pulse effect
+                let pulsedSize = p.size + sin(p.pulse) * 2;
+                let alpha = p.alpha + sin(p.pulse * 0.5) * 0.2;
+                
+                fill(p.color[0], p.color[1], p.color[2], alpha * 255 * 0.6);
+                noStroke();
+                ellipse(p.x, p.y, pulsedSize);
+                
+                // Add subtle glow
+                fill(p.color[0], p.color[1], p.color[2], alpha * 100);
+                ellipse(p.x, p.y, pulsedSize * 2);
+            }
+            
+            // Update and draw network nodes
+            for (let node of nodes) {
+                // Move towards target
+                node.x = lerp(node.x, node.targetX, 0.01);
+                node.y = lerp(node.y, node.targetY, 0.01);
+                
+                // Create new target when close
+                if (dist(node.x, node.y, node.targetX, node.targetY) < 5) {
+                    node.targetX = random(width * 0.1, width * 0.9);
+                    node.targetY = random(height * 0.2, height * 0.8);
+                }
+                
+                // Draw connections to nearby nodes
+                stroke(node.color[0], node.color[1], node.color[2], 60);
+                strokeWeight(1);
+                for (let other of nodes) {
+                    if (node !== other) {
+                        let d = dist(node.x, node.y, other.x, other.y);
+                        if (d < 150) {
+                            let alpha = map(d, 0, 150, 80, 0);
+                            stroke(node.color[0], node.color[1], node.color[2], alpha);
+                            line(node.x, node.y, other.x, other.y);
+                        }
+                    }
+                }
+                
+                // Draw node
+                fill(node.color[0], node.color[1], node.color[2], 180);
+                noStroke();
+                ellipse(node.x, node.y, node.size);
+                
+                // Add highlight
+                fill(255, 255, 255, 100);
+                ellipse(node.x - node.size * 0.2, node.y - node.size * 0.2, node.size * 0.4);
+            }
+            
+            // Add flowing gradient waves
+            let time = millis() * 0.001;
+            for (let i = 0; i < 3; i++) {
+                let waveColor = colors[i % colors.length];
+                stroke(waveColor[0], waveColor[1], waveColor[2], 30);
+                strokeWeight(2);
+                noFill();
+                
+                beginShape();
+                for (let x = 0; x <= width; x += 10) {
+                    let y = height * 0.3 + sin(x * 0.01 + time + i) * 50 + i * 60;
+                    vertex(x, y);
+                }
+                endShape();
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, 600);
+            // Reposition particles and nodes for new canvas size
+            for (let p of particles) {
+                if (p.x > width) p.x = width;
+                if (p.y > height) p.y = height;
+            }
+            for (let node of nodes) {
+                node.x = constrain(node.x, width * 0.1, width * 0.9);
+                node.y = constrain(node.y, height * 0.2, height * 0.8);
+                node.targetX = random(width * 0.1, width * 0.9);
+                node.targetY = random(height * 0.2, height * 0.8);
+            }
+        }
+
+        // Quick Link Icon Animations (Static P5.js Icons)
+
+        // Calendar Icon - Weekly Schedule
+        function scheduleIcon(p) {
+            p.setup = function() {
+                p.createCanvas(40, 40);
+                p.noLoop(); // Static image
+            };
+            
+            p.draw = function() {
+                p.clear();
+                
+                // Calendar base
+                p.fill(37, 99, 235, 200);
+                p.stroke(37, 99, 235);
+                p.strokeWeight(1);
+                p.rect(8, 12, 24, 20, 2);
+                
+                // Calendar header
+                p.fill(37, 99, 235);
+                p.noStroke();
+                p.rect(8, 12, 24, 6, 2, 2, 0, 0);
+                
+                // Calendar rings
+                p.stroke(255);
+                p.strokeWeight(2);
+                p.line(14, 8, 14, 16);
+                p.line(26, 8, 26, 16);
+                
+                // Calendar grid
+                p.stroke(255, 255, 255, 150);
+                p.strokeWeight(1);
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        let x = 12 + j * 5;
+                        let y = 20 + i * 3;
+                        p.point(x, y);
+                    }
+                }
+            };
+        }
+
+        // Note/Document Icon - Lab Exercises  
+        function assignmentsIcon(p) {
+            p.setup = function() {
+                p.createCanvas(40, 40);
+                p.noLoop();
+            };
+            
+            p.draw = function() {
+                p.clear();
+                
+                // Document base
+                p.fill(139, 92, 246, 200);
+                p.stroke(139, 92, 246);
+                p.strokeWeight(1);
+                p.rect(10, 8, 20, 24, 2);
+                
+                // Document corner fold
+                p.fill(255, 255, 255, 150);
+                p.noStroke();
+                p.triangle(24, 8, 30, 8, 30, 14);
+                
+                // Text lines
+                p.stroke(255, 255, 255, 180);
+                p.strokeWeight(1);
+                p.line(13, 16, 24, 16);
+                p.line(13, 19, 22, 19);
+                p.line(13, 22, 26, 22);
+                p.line(13, 25, 20, 25);
+                
+                // Pencil/pen tip
+                p.fill(245, 158, 11);
+                p.noStroke();
+                p.circle(25, 28, 3);
+            };
+        }
+
+        // Tools Icon - Tools & Resources
+        function toolsIcon(p) {
+            p.setup = function() {
+                p.createCanvas(40, 40);
+                p.noLoop();
+            };
+            
+            p.draw = function() {
+                p.clear();
+                
+                // Wrench
+                p.stroke(6, 182, 212);
+                p.strokeWeight(3);
+                p.strokeCap(p.ROUND);
+                p.line(12, 15, 18, 21);
+                
+                // Wrench head
+                p.fill(6, 182, 212, 200);
+                p.noStroke();
+                p.circle(12, 15, 6);
+                p.circle(18, 21, 4);
+                
+                // Hammer handle
+                p.stroke(139, 92, 246);
+                p.strokeWeight(2);
+                p.line(22, 25, 28, 19);
+                
+                // Hammer head
+                p.fill(139, 92, 246, 200);
+                p.noStroke();
+                p.rect(26, 16, 6, 4, 1);
+                
+                // Sparkles/gear teeth
+                p.fill(245, 158, 11, 150);
+                p.noStroke();
+                p.circle(15, 10, 2);
+                p.circle(25, 12, 2);
+                p.circle(30, 25, 2);
+            };
+        }
+
+        // Person/Instructor Icon - Instructor Support
+        function instructorIcon(p) {
+            p.setup = function() {
+                p.createCanvas(40, 40);
+                p.noLoop();
+            };
+            
+            p.draw = function() {
+                p.clear();
+                
+                // Head
+                p.fill(16, 185, 129, 200);
+                p.stroke(16, 185, 129);
+                p.strokeWeight(1);
+                p.circle(20, 15, 12);
+                
+                // Body/shoulders
+                p.fill(16, 185, 129, 150);
+                p.noStroke();
+                p.rect(12, 22, 16, 12, 8, 8, 0, 0);
+                
+                // Graduation cap
+                p.fill(37, 99, 235);
+                p.noStroke();
+                p.rect(16, 8, 8, 3, 1);
+                p.rect(14, 11, 12, 2, 1);
+                
+                // Tassel
+                p.stroke(245, 158, 11);
+                p.strokeWeight(2);
+                p.line(24, 10, 27, 13);
+                p.fill(245, 158, 11);
+                p.noStroke();
+                p.circle(27, 13, 2);
+                
+                // Eyes
+                p.fill(255);
+                p.noStroke();
+                p.circle(17, 14, 2);
+                p.circle(23, 14, 2);
+            };
+        }
+
+        // Rocket Icon - Live Demo
+        function demoIcon(p) {
+            p.setup = function() {
+                p.createCanvas(40, 40);
+                p.noLoop();
+            };
+            
+            p.draw = function() {
+                p.clear();
+                
+                // Rocket body
+                p.fill(37, 99, 235, 200);
+                p.stroke(37, 99, 235);
+                p.strokeWeight(1);
+                p.ellipse(20, 18, 8, 16);
+                
+                // Rocket nose
+                p.fill(245, 158, 11);
+                p.noStroke();
+                p.triangle(16, 10, 24, 10, 20, 6);
+                
+                // Rocket fins
+                p.fill(139, 92, 246, 180);
+                p.noStroke();
+                p.triangle(16, 22, 14, 28, 18, 26);
+                p.triangle(24, 22, 26, 28, 22, 26);
+                
+                // Window
+                p.fill(6, 182, 212, 150);
+                p.stroke(255);
+                p.strokeWeight(1);
+                p.circle(20, 16, 4);
+                
+                // Flame
+                p.fill(245, 158, 11, 180);
+                p.noStroke();
+                p.ellipse(20, 30, 4, 6);
+                p.fill(255, 100, 100, 150);
+                p.ellipse(20, 32, 2, 4);
+            };
+        }
+
+        // Gear Icon - Course Repository
+        function repositoryIcon(p) {
+            p.setup = function() {
+                p.createCanvas(40, 40);
+                p.noLoop();
+            };
+            
+            p.draw = function() {
+                p.clear();
+                
+                // Gear outer ring
+                p.stroke(37, 99, 235);
+                p.strokeWeight(2);
+                p.noFill();
+                
+                // Draw gear teeth
+                for (let i = 0; i < 8; i++) {
+                    let angle = i * p.TWO_PI / 8;
+                    let x1 = 20 + p.cos(angle) * 12;
+                    let y1 = 20 + p.sin(angle) * 12;
+                    let x2 = 20 + p.cos(angle) * 15;
+                    let y2 = 20 + p.sin(angle) * 15;
+                    p.line(x1, y1, x2, y2);
+                }
+                
+                // Gear center circle
+                p.fill(37, 99, 235, 200);
+                p.stroke(37, 99, 235);
+                p.strokeWeight(1);
+                p.circle(20, 20, 12);
+                
+                // Center hole
+                p.fill(255);
+                p.noStroke();
+                p.circle(20, 20, 6);
+                
+                // Code brackets (repository symbol)
+                p.stroke(6, 182, 212);
+                p.strokeWeight(2);
+                p.noFill();
+                p.arc(17, 18, 4, 4, p.PI/2, 3*p.PI/2);
+                p.arc(23, 22, 4, 4, -p.PI/2, p.PI/2);
+            };
+        }
+
+        // Feature Card Animations
+
+        // Mobile App Animation - Smartphone with app icons
+        function mobileAnimation(p) {
+            let apps = [];
+            let screenRect = {};
+            
+            p.setup = function() {
+                p.createCanvas(300, 200);
+                screenRect = { x: 100, y: 30, w: 100, h: 140, r: 15 };
+                
+                // Create app icons
+                for (let i = 0; i < 12; i++) {
+                    apps.push({
+                        x: 110 + (i % 3) * 26,
+                        y: 50 + Math.floor(i / 3) * 26,
+                        color: [37, 99, 235, 139, 92, 246, 6, 182, 212, 16, 185, 129][i % 4],
+                        pulse: p.random(p.TWO_PI)
+                    });
+                }
+            };
+            
+            p.draw = function() {
+                p.clear();
+                
+                // Phone outline
+                p.stroke(37, 99, 235, 150);
+                p.strokeWeight(3);
+                p.fill(248, 250, 252);
+                p.rect(screenRect.x, screenRect.y, screenRect.w, screenRect.h, screenRect.r);
+                
+                // Screen
+                p.fill(15, 23, 42);
+                p.noStroke();
+                p.rect(screenRect.x + 5, screenRect.y + 15, screenRect.w - 10, screenRect.h - 30, 8);
+                
+                // App icons
+                apps.forEach((app, i) => {
+                    app.pulse += 0.02;
+                    let size = 18 + p.sin(app.pulse) * 2;
+                    let alpha = 200 + p.sin(app.pulse * 0.7) * 50;
+                    
+                    let colors = [[37, 99, 235], [139, 92, 246], [6, 182, 212], [16, 185, 129]];
+                    let color = colors[i % 4];
+                    
+                    p.fill(color[0], color[1], color[2], alpha);
+                    p.noStroke();
+                    p.rect(app.x, app.y, size, size, 4);
+                    
+                    // App icon highlight
+                    p.fill(255, 255, 255, 80);
+                    p.rect(app.x + 2, app.y + 2, size - 8, size - 8, 2);
+                });
+                
+                // Notification dots
+                p.fill(245, 158, 11);
+                p.noStroke();
+                p.circle(125, 52, 6);
+                p.circle(177, 78, 6);
+            };
+        }
+
+        // Digital Publishing Animation - Book pages turning
+        function storytellingAnimation(p) {
+            let pages = [];
+            let time = 0;
+            
+            p.setup = function() {
+                p.createCanvas(300, 200);
+                for (let i = 0; i < 5; i++) {
+                    pages.push({
+                        angle: 0,
+                        offset: i * 3,
+                        flip: false
+                    });
+                }
+            };
+            
+            p.draw = function() {
+                p.clear();
+                time += 0.02;
+                
+                // Book base
+                p.fill(139, 92, 246, 180);
+                p.stroke(139, 92, 246);
+                p.strokeWeight(2);
+                p.rect(80, 60, 140, 100, 5);
+                
+                // Book spine
+                p.fill(37, 99, 235);
+                p.noStroke();
+                p.rect(78, 58, 8, 104, 3);
+                
+                // Pages turning
+                pages.forEach((page, i) => {
+                    p.push();
+                    p.translate(150, 110);
+                    
+                    // Page animation
+                    page.angle = p.sin(time + page.offset) * 0.3;
+                    
+                    p.rotate(page.angle);
+                    p.fill(255, 255, 255, 200 - i * 20);
+                    p.stroke(200, 200, 200, 150);
+                    p.strokeWeight(1);
+                    p.rect(-60 + i * 2, -40 + i, 120 - i * 4, 80 - i * 2, 3);
+                    
+                    // Text lines
+                    p.stroke(100, 100, 100, 120);
+                    p.strokeWeight(1);
+                    for (let line = 0; line < 6; line++) {
+                        p.line(-50 + i * 2, -25 + line * 8 + i, 40 - i * 2, -25 + line * 8 + i);
+                    }
+                    
+                    p.pop();
+                });
+                
+                // Digital elements
+                p.fill(6, 182, 212, 100);
+                p.noStroke();
+                for (let i = 0; i < 8; i++) {
+                    let x = 90 + i * 15 + p.sin(time + i) * 3;
+                    let y = 45 + p.cos(time + i * 0.5) * 5;
+                    p.circle(x, y, 4);
+                }
+            };
+        }
+
+        // Interactive Media Animation - Interactive nodes and connections
+        function interactiveAnimation(p) {
+            let nodes = [];
+            let connections = [];
+            let time = 0;
+            
+            p.setup = function() {
+                p.createCanvas(300, 200);
+                
+                // Create interactive nodes
+                for (let i = 0; i < 8; i++) {
+                    nodes.push({
+                        x: p.random(40, 260),
+                        y: p.random(40, 160),
+                        targetX: p.random(40, 260),
+                        targetY: p.random(40, 160),
+                        size: p.random(20, 35),
+                        color: [[6, 182, 212], [16, 185, 129], [245, 158, 11]][p.floor(p.random(3))],
+                        pulse: p.random(p.TWO_PI),
+                        active: false
+                    });
+                }
+            };
+            
+            p.draw = function() {
+                p.clear();
+                time += 0.02;
+                
+                // Update nodes
+                nodes.forEach((node, i) => {
+                    node.pulse += 0.04;
+                    
+                    // Move towards target
+                    node.x = p.lerp(node.x, node.targetX, 0.02);
+                    node.y = p.lerp(node.y, node.targetY, 0.02);
+                    
+                    // Create new target when close
+                    if (p.dist(node.x, node.y, node.targetX, node.targetY) < 5) {
+                        node.targetX = p.random(40, 260);
+                        node.targetY = p.random(40, 160);
+                    }
+                    
+                    // Check for interaction (simulate hover)
+                    node.active = p.sin(time + i) > 0.3;
+                    
+                    let pulsedSize = node.size + p.sin(node.pulse) * 3;
+                    let alpha = node.active ? 255 : 150;
+                    
+                    // Draw connections
+                    nodes.forEach((other, j) => {
+                        if (i !== j && (node.active || other.active)) {
+                            let d = p.dist(node.x, node.y, other.x, other.y);
+                            if (d < 100) {
+                                let lineAlpha = p.map(d, 0, 100, 100, 0);
+                                p.stroke(node.color[0], node.color[1], node.color[2], lineAlpha);
+                                p.strokeWeight(2);
+                                p.line(node.x, node.y, other.x, other.y);
+                                
+                                // Data flow particles
+                                let flowX = p.lerp(node.x, other.x, (p.sin(time * 2) + 1) / 2);
+                                let flowY = p.lerp(node.y, other.y, (p.sin(time * 2) + 1) / 2);
+                                p.fill(255, 255, 255, 200);
+                                p.noStroke();
+                                p.circle(flowX, flowY, 4);
+                            }
+                        }
+                    });
+                    
+                    // Draw node
+                    p.fill(node.color[0], node.color[1], node.color[2], alpha);
+                    p.stroke(255, 255, 255, 100);
+                    p.strokeWeight(node.active ? 3 : 1);
+                    p.circle(node.x, node.y, pulsedSize);
+                    
+                    // Node highlight
+                    p.fill(255, 255, 255, node.active ? 150 : 80);
+                    p.noStroke();
+                    p.circle(node.x - 3, node.y - 3, pulsedSize * 0.4);
+                });
+            };
+        }
+
+        // Initialize all animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for elements to be visible
+            setTimeout(() => {
+                // Feature card animations
+                if (document.getElementById('web-animation')) {
+                    new p5(mobileAnimation, 'web-animation');
+                }
+                if (document.getElementById('storytelling-animation')) {
+                    new p5(storytellingAnimation, 'storytelling-animation');
+                }
+                if (document.getElementById('interactive-animation')) {
+                    new p5(interactiveAnimation, 'interactive-animation');
+                }
+                
+                // Quick link icon animations (static)
+                if (document.getElementById('schedule-icon')) {
+                    new p5(scheduleIcon, 'schedule-icon');
+                }
+                if (document.getElementById('assignments-icon')) {
+                    new p5(assignmentsIcon, 'assignments-icon');
+                }
+                if (document.getElementById('tools-icon')) {
+                    new p5(toolsIcon, 'tools-icon');
+                }
+                if (document.getElementById('instructor-icon')) {
+                    new p5(instructorIcon, 'instructor-icon');
+                }
+                if (document.getElementById('demo-icon')) {
+                    new p5(demoIcon, 'demo-icon');
+                }
+                if (document.getElementById('repository-icon')) {
+                    new p5(repositoryIcon, 'repository-icon');
+                }
+            }, 500);
+        });
     </script>
 </body>
 </html>
