@@ -31,9 +31,19 @@ The project is organized into the following directories and files:
     - **footer.html**: Footer structure.
     - **navigation.html**: Navigation menu structure.
   - **assets/**: Contains fonts and icons used in the website.
+- **Musk_Watcher/**: External app tracking social media presence.
 - **docs/**: Contains additional documentation related to the project.
   - **content.md**: Additional content or documentation.
+- **_archive/**: Contains archived files not needed for current development.
+  - **backup/**: Backup copies of files.
+  - **tests/**: Test files and experimental code.
+  - **discontinued/**: Files from discontinued features or migrations.
+  - **scripts/**: Legacy shell scripts for monitoring and diagnostics.
+  - **alternative-designs/**: Alternative design implementations.
 - **package.json**: Configuration file for npm.
+
+## Recent Updates
+- **Archive Cleanup (Latest)**: Reorganized workspace by moving non-essential files to the `_archive/` directory with organized subdirectories. This includes backup files, test files, discontinued documentation, legacy scripts, and alternative design implementations. The active workspace now contains only files relevant to current development.
 
 ## Setup Instructions
 1. Clone the repository to your local machine.
