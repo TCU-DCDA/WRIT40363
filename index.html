@@ -695,7 +695,7 @@
         <div class="container">
             <div class="hero-content">
                 
-                <h1>Multimedia Authoring</h1>
+                <h1>MM Authoring: Apps & eBooks</h1>
                 
                 <p class="hero-subtitle">
                     Study mobile applications and digital publishing through design thinking, 
@@ -704,16 +704,13 @@
                 
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-value">16</span>
-                        <span class="stat-label">Weeks</span>
+                        <span class="stat-value">Fall</span>
+                        <span class="stat-label">2025</span>
                     </div>
+                    
                     <div class="stat-item">
-                        <span class="stat-value">3</span>
-                        <span class="stat-label">Credits</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">T/Th</span>
-                        <span class="stat-label">12:30-1:50</span>
+                        <span class="stat-value">Schar 2003</span>
+                        <span class="stat-label">T/Th | 12:30-1:50</span>
                     </div>
                     
                 </div>
@@ -1553,41 +1550,39 @@
         }
 
         // Initialize all animations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wait for elements to be visible
-            setTimeout(() => {
-                // Feature card animations
-                if (document.getElementById('web-animation')) {
-                    new p5(mobileAnimation, 'web-animation');
-                }
-                if (document.getElementById('storytelling-animation')) {
-                    new p5(storytellingAnimation, 'storytelling-animation');
-                }
-                if (document.getElementById('interactive-animation')) {
-                    new p5(interactiveAnimation, 'interactive-animation');
-                }
-                
-                // Quick link icon animations (static)
-                if (document.getElementById('schedule-icon')) {
-                    new p5(scheduleIcon, 'schedule-icon');
-                }
-                if (document.getElementById('assignments-icon')) {
-                    new p5(assignmentsIcon, 'assignments-icon');
-                }
-                if (document.getElementById('tools-icon')) {
-                    new p5(toolsIcon, 'tools-icon');
-                }
-                if (document.getElementById('instructor-icon')) {
-                    new p5(instructorIcon, 'instructor-icon');
-                }
-                if (document.getElementById('demo-icon')) {
-                    new p5(demoIcon, 'demo-icon');
-                }
-                if (document.getElementById('repository-icon')) {
-                    new p5(repositoryIcon, 'repository-icon');
-                }
-            }, 500);
-        });
+        setTimeout(() => {
+            // Feature card animations
+            if (document.getElementById('web-animation')) {
+                new p5(mobileAnimation, 'web-animation');
+            }
+            if (document.getElementById('storytelling-animation')) {
+                new p5(storytellingAnimation, 'storytelling-animation');
+            }
+            if (document.getElementById('interactive-animation')) {
+                new p5(interactiveAnimation, 'interactive-animation');
+            }
+            
+            // Quick link icon animations (static)
+            if (document.getElementById('schedule-icon')) {
+                new p5(scheduleIcon, 'schedule-icon');
+            }
+            if (document.getElementById('assignments-icon')) {
+                new p5(assignmentsIcon, 'assignments-icon');
+            }
+            if (document.getElementById('tools-icon')) {
+                new p5(toolsIcon, 'tools-icon');
+            }
+            if (document.getElementById('instructor-icon')) {
+                new p5(instructorIcon, 'instructor-icon');
+            }
+            if (document.getElementById('demo-icon')) {
+                new p5(demoIcon, 'demo-icon');
+            }
+            if (document.getElementById('repository-icon')) {
+                new p5(repositoryIcon, 'repository-icon');
+            }
+        }, 500);
+
         }); // End DOMContentLoaded
     </script>
 </body>
