@@ -43,7 +43,8 @@ The project is organized into the following directories and files:
 - **package.json**: Configuration file for npm.
 
 ## Recent Updates
-- **Archive Cleanup (Latest)**: Reorganized workspace by moving non-essential files to the `_archive/` directory with organized subdirectories. This includes backup files, test files, discontinued documentation, legacy scripts, and alternative design implementations. The active workspace now contains only files relevant to current development.
+- **License Conflict Resolution (Latest)**: Fixed "Similar code found with 2 license types" warning by archiving duplicate code citation files containing "License: unknown" entries from external repositories. Consolidated to single clean code-citations.md file with proper MIT license documentation. All external references now documented as educational use under project's MIT license.
+- **Archive Cleanup**: Reorganized workspace by moving non-essential files to the `_archive/` directory with organized subdirectories. This includes backup files, test files, discontinued documentation, legacy scripts, and alternative design implementations. The active workspace now contains only files relevant to current development.
 
 ## Setup Instructions
 1. Clone the repository to your local machine.
