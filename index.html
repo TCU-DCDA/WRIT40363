@@ -155,7 +155,20 @@
         /* Hero Section */
         .hero {
             padding: 8rem 0 6rem;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            background: 
+                linear-gradient(135deg, 
+                    #667eea 0%, 
+                    #764ba2 25%, 
+                    #f093fb 50%, 
+                    #f5576c 75%, 
+                    #4facfe 100%
+                ),
+                linear-gradient(45deg, 
+                    rgba(37, 99, 235, 0.9) 0%, 
+                    rgba(139, 92, 246, 0.8) 50%, 
+                    rgba(6, 182, 212, 0.7) 100%
+                );
+            background-blend-mode: overlay;
             position: relative;
             overflow: hidden;
         }
@@ -168,9 +181,10 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-                linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.1) 100%);
+                radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(37, 99, 235, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 70%),
+                linear-gradient(45deg, rgba(6, 182, 212, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
             pointer-events: none;
         }
 
@@ -194,15 +208,16 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 0.5rem 1rem;
             border-radius: 2rem;
             font-size: 0.875rem;
             font-weight: 500;
             color: var(--primary-blue);
             margin-bottom: 2rem;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
             animation: fadeInUp 0.6s ease-out;
         }
 
@@ -210,19 +225,21 @@
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 800;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-blue) 50%, var(--accent-purple) 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #e2e8f0 100%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             animation: fadeInUp 0.6s ease-out 0.2s both;
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.9);
             max-width: 600px;
             margin: 0 auto 2rem;
             font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             animation: fadeInUp 0.6s ease-out 0.4s both;
         }
 
@@ -276,29 +293,33 @@
         }
 
         .btn-primary {
-            background: var(--primary-blue);
-            color: var(--text-white);
-            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary-blue);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .btn-primary:hover {
-            background: var(--primary-blue-dark);
+            background: rgba(255, 255, 255, 1);
+            color: var(--primary-blue-dark);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-blue);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
         }
 
         .btn-outline {
-            background: var(--bg-card);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+            backdrop-filter: blur(8px);
         }
 
         .btn-outline:hover {
-            background: var(--bg-secondary);
-            border-color: var(--primary-blue);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.4);
         }
 
         /* Feature Cards Section */
@@ -678,7 +699,7 @@
                 <li><a href="src/pages/assignments.html" class="nav-link">Assignments</a></li>
                 <li><a href="src/pages/resources.html" class="nav-link">Resources</a></li>
                 <li><a href="src/pages/contact.html" class="nav-link">Contact</a></li>
-                <li><a href="https://writ-40363-v2.vercel.app/" class="nav-cta" target="_blank">Musk Tracker</a></li>
+                <li><span class="nav-cta nav-cta-disabled">Apps</span></li>
             </ul>
             
             <div class="nav-toggle">
@@ -947,147 +968,149 @@
             });
         }
 
-        // P5.js Abstract Animation for Hero Section
-        let particles = [];
-        let nodes = [];
-        const colors = [
-            [37, 99, 235],    // primary-blue
-            [139, 92, 246],   // accent-purple  
-            [6, 182, 212],    // accent-cyan
-            [16, 185, 129],   // accent-green
-            [245, 158, 11]    // accent-orange
-        ];
+        // P5.js Abstract Animation for Hero Section (Instance Mode)
+        function heroAnimation(p) {
+            let particles = [];
+            let nodes = [];
+            const colors = [
+                [37, 99, 235],    // primary-blue
+                [139, 92, 246],   // accent-purple  
+                [6, 182, 212],    // accent-cyan
+                [16, 185, 129],   // accent-green
+                [245, 158, 11]    // accent-orange
+            ];
 
-        function setup() {
-            let canvas = createCanvas(windowWidth, 600);
-            canvas.parent('hero-animation');
-            canvas.style('position', 'absolute');
-            canvas.style('top', '0');
-            canvas.style('left', '0');
-            canvas.style('z-index', '1');
+            p.setup = function() {
+                let canvas = p.createCanvas(p.windowWidth, 600);
+                canvas.parent('hero-animation');
+                canvas.style('position', 'absolute');
+                canvas.style('top', '0');
+                canvas.style('left', '0');
+                canvas.style('z-index', '1');
             
-            // Create floating particles
-            for (let i = 0; i < 40; i++) {
-                particles.push({
-                    x: random(width),
-                    y: random(height),
-                    size: random(2, 8),
-                    speedX: random(-1, 1),
-                    speedY: random(-1, 1),
-                    color: random(colors),
-                    alpha: random(0.3, 0.8),
-                    pulse: random(TWO_PI)
-                });
-            }
-
-            // Create network nodes
-            for (let i = 0; i < 12; i++) {
-                nodes.push({
-                    x: random(width * 0.1, width * 0.9),
-                    y: random(height * 0.2, height * 0.8),
-                    targetX: random(width * 0.1, width * 0.9),
-                    targetY: random(height * 0.2, height * 0.8),
-                    size: random(4, 12),
-                    color: random(colors),
-                    connections: []
-                });
-            }
-        }
-
-        function draw() {
-            clear(); // Transparent background
-            
-            // Update and draw particles
-            for (let p of particles) {
-                p.x += p.speedX;
-                p.y += p.speedY;
-                p.pulse += 0.03;
-                
-                // Wrap around edges
-                if (p.x < 0) p.x = width;
-                if (p.x > width) p.x = 0;
-                if (p.y < 0) p.y = height;
-                if (p.y > height) p.y = 0;
-                
-                // Draw particle with pulse effect
-                let pulsedSize = p.size + sin(p.pulse) * 2;
-                let alpha = p.alpha + sin(p.pulse * 0.5) * 0.2;
-                
-                fill(p.color[0], p.color[1], p.color[2], alpha * 255 * 0.6);
-                noStroke();
-                ellipse(p.x, p.y, pulsedSize);
-                
-                // Add subtle glow
-                fill(p.color[0], p.color[1], p.color[2], alpha * 100);
-                ellipse(p.x, p.y, pulsedSize * 2);
-            }
-            
-            // Update and draw network nodes
-            for (let node of nodes) {
-                // Move towards target
-                node.x = lerp(node.x, node.targetX, 0.01);
-                node.y = lerp(node.y, node.targetY, 0.01);
-                
-                // Create new target when close
-                if (dist(node.x, node.y, node.targetX, node.targetY) < 5) {
-                    node.targetX = random(width * 0.1, width * 0.9);
-                    node.targetY = random(height * 0.2, height * 0.8);
+                // Create floating particles
+                for (let i = 0; i < 40; i++) {
+                    particles.push({
+                        x: p.random(p.width),
+                        y: p.random(p.height),
+                        size: p.random(2, 8),
+                        speedX: p.random(-1, 1),
+                        speedY: p.random(-1, 1),
+                        color: p.random(colors),
+                        alpha: p.random(0.3, 0.8),
+                        pulse: p.random(p.TWO_PI)
+                    });
                 }
-                
-                // Draw connections to nearby nodes
-                stroke(node.color[0], node.color[1], node.color[2], 60);
-                strokeWeight(1);
-                for (let other of nodes) {
-                    if (node !== other) {
-                        let d = dist(node.x, node.y, other.x, other.y);
-                        if (d < 150) {
-                            let alpha = map(d, 0, 150, 80, 0);
-                            stroke(node.color[0], node.color[1], node.color[2], alpha);
-                            line(node.x, node.y, other.x, other.y);
+
+                // Create network nodes
+                for (let i = 0; i < 12; i++) {
+                    nodes.push({
+                        x: p.random(p.width * 0.1, p.width * 0.9),
+                        y: p.random(p.height * 0.2, p.height * 0.8),
+                        targetX: p.random(p.width * 0.1, p.width * 0.9),
+                        targetY: p.random(p.height * 0.2, p.height * 0.8),
+                        size: p.random(4, 12),
+                        color: p.random(colors),
+                        connections: []
+                    });
+                }
+            };
+
+            p.draw = function() {
+                p.clear(); // Transparent background
+            
+                // Update and draw particles
+                for (let particle of particles) {
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+                    particle.pulse += 0.03;
+                    
+                    // Wrap around edges
+                    if (particle.x < 0) particle.x = p.width;
+                    if (particle.x > p.width) particle.x = 0;
+                    if (particle.y < 0) particle.y = p.height;
+                    if (particle.y > p.height) particle.y = 0;
+                    
+                    // Draw particle with pulse effect
+                    let pulsedSize = particle.size + p.sin(particle.pulse) * 2;
+                    let alpha = particle.alpha + p.sin(particle.pulse * 0.5) * 0.2;
+                    
+                    p.fill(particle.color[0], particle.color[1], particle.color[2], alpha * 255 * 0.6);
+                    p.noStroke();
+                    p.ellipse(particle.x, particle.y, pulsedSize);
+                    
+                    // Add subtle glow
+                    p.fill(particle.color[0], particle.color[1], particle.color[2], alpha * 100);
+                    p.ellipse(particle.x, particle.y, pulsedSize * 2);
+                }
+            
+                // Update and draw network nodes
+                for (let node of nodes) {
+                    // Move towards target
+                    node.x = p.lerp(node.x, node.targetX, 0.01);
+                    node.y = p.lerp(node.y, node.targetY, 0.01);
+                    
+                    // Create new target when close
+                    if (p.dist(node.x, node.y, node.targetX, node.targetY) < 5) {
+                        node.targetX = p.random(p.width * 0.1, p.width * 0.9);
+                        node.targetY = p.random(p.height * 0.2, p.height * 0.8);
+                    }
+                    
+                    // Draw connections to nearby nodes
+                    p.stroke(node.color[0], node.color[1], node.color[2], 60);
+                    p.strokeWeight(1);
+                    for (let other of nodes) {
+                        if (node !== other) {
+                            let d = p.dist(node.x, node.y, other.x, other.y);
+                            if (d < 150) {
+                                let alpha = p.map(d, 0, 150, 80, 0);
+                                p.stroke(node.color[0], node.color[1], node.color[2], alpha);
+                                p.line(node.x, node.y, other.x, other.y);
+                            }
                         }
                     }
+                    
+                    // Draw node
+                    p.fill(node.color[0], node.color[1], node.color[2], 180);
+                    p.noStroke();
+                    p.ellipse(node.x, node.y, node.size);
+                    
+                    // Add highlight
+                    p.fill(255, 255, 255, 100);
+                    p.ellipse(node.x - node.size * 0.2, node.y - node.size * 0.2, node.size * 0.4);
                 }
                 
-                // Draw node
-                fill(node.color[0], node.color[1], node.color[2], 180);
-                noStroke();
-                ellipse(node.x, node.y, node.size);
-                
-                // Add highlight
-                fill(255, 255, 255, 100);
-                ellipse(node.x - node.size * 0.2, node.y - node.size * 0.2, node.size * 0.4);
-            }
-            
-            // Add flowing gradient waves
-            let time = millis() * 0.001;
-            for (let i = 0; i < 3; i++) {
-                let waveColor = colors[i % colors.length];
-                stroke(waveColor[0], waveColor[1], waveColor[2], 30);
-                strokeWeight(2);
-                noFill();
-                
-                beginShape();
-                for (let x = 0; x <= width; x += 10) {
-                    let y = height * 0.3 + sin(x * 0.01 + time + i) * 50 + i * 60;
-                    vertex(x, y);
+                // Add flowing gradient waves
+                let time = p.millis() * 0.001;
+                for (let i = 0; i < 3; i++) {
+                    let waveColor = colors[i % colors.length];
+                    p.stroke(waveColor[0], waveColor[1], waveColor[2], 30);
+                    p.strokeWeight(2);
+                    p.noFill();
+                    
+                    p.beginShape();
+                    for (let x = 0; x <= p.width; x += 10) {
+                        let y = p.height * 0.3 + p.sin(x * 0.01 + time + i) * 50 + i * 60;
+                        p.vertex(x, y);
+                    }
+                    p.endShape();
                 }
-                endShape();
-            }
-        }
+            };
 
-        function windowResized() {
-            resizeCanvas(windowWidth, 600);
-            // Reposition particles and nodes for new canvas size
-            for (let p of particles) {
-                if (p.x > width) p.x = width;
-                if (p.y > height) p.y = height;
-            }
-            for (let node of nodes) {
-                node.x = constrain(node.x, width * 0.1, width * 0.9);
-                node.y = constrain(node.y, height * 0.2, height * 0.8);
-                node.targetX = random(width * 0.1, width * 0.9);
-                node.targetY = random(height * 0.2, height * 0.8);
-            }
+            p.windowResized = function() {
+                p.resizeCanvas(p.windowWidth, 600);
+                // Reposition particles and nodes for new canvas size
+                for (let particle of particles) {
+                    if (particle.x > p.width) particle.x = p.width;
+                    if (particle.y > p.height) particle.y = p.height;
+                }
+                for (let node of nodes) {
+                    node.x = p.constrain(node.x, p.width * 0.1, p.width * 0.9);
+                    node.y = p.constrain(node.y, p.height * 0.2, p.height * 0.8);
+                    node.targetX = p.random(p.width * 0.1, p.width * 0.9);
+                    node.targetY = p.random(p.height * 0.2, p.height * 0.8);
+                }
+            };
         }
 
         // Quick Link Icon Animations (Static P5.js Icons)
@@ -1551,6 +1574,11 @@
 
         // Initialize all animations
         setTimeout(() => {
+            // Hero animation
+            if (document.getElementById('hero-animation')) {
+                new p5(heroAnimation, 'hero-animation');
+            }
+            
             // Feature card animations
             if (document.getElementById('web-animation')) {
                 new p5(mobileAnimation, 'web-animation');
